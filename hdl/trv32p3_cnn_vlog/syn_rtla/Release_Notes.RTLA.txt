@@ -1,0 +1,135 @@
+###############################################################################
+# Synopsys RTL Architect Reference Methodology
+# Script: Release_Notes.RTLA.txt 
+# Version: T-2022.06
+# Copyright (C) 2019-2022 Synopsys, Inc. All rights reserved.
+##########################################################################################
+
+S-2021.06 Updates
+=================
+*	Standardized design_setup.tcl to match with Fusion Compiler RM 
+*	Changed setup file RM variable organization
+*	Added concurrent clock and data optimization and multibit application options
+*	Added rtl_opt flow without break-points in flat flow
+*	Added scenario power analysis and strip path for SAIF and FSDB files
+*	Added sample script for sweeping variable list using explore design 
+*	Added set_technology command
+*	Added Early Data Handling checks
+
+###############################################################################
+# Standardize design_setup.tcl to match with Fusion Compiler RM
+###############################################################################
+
+* The design_setup.tcl file is standardized for sharing between Fusion Compiler
+  RM and RTL Architect RM. Sections 1,2,3, and 4 in the design setup.tcl file must
+  be filled in for RTL Architect. Other variables might be not relevant to
+  RTL Architect.
+
+  - The rm_utilities.tcl file is not applied in RTL Architect and is removed 
+    from the script.
+
+  - The following two variable output directory names are changed for the RTL 
+    Architect RM.
+    set OUTPUTS_DIR	"./outputs_rtl"	
+    set REPORTS_DIR	"./rpts_rtl"		
+
+###############################################################################
+# Changed setup file RM variable organization
+###############################################################################
+
+* The RM variables in the design_setup.tcl and rtl_setup.tcl files are reorganized
+  to focus the two files under the following guidance.
+
+  - design_setup.tcl 
+    A file for design specific setup variables, including design input files
+    such as RTL, floorplan, UPF, and reference libraries. System related variables 
+    for block names, reporting, and the search path are also defined in this file.
+
+  - rtl_setup.tcl
+    A file for RTL related features and control of the RM flow. This file defines 
+    variables to control features and flows in the RM for different steps. This
+    file also include RTL design specific plugin file definitions to be sourced
+    before or after major command steps.
+
+###############################################################################
+# Added concurrent clock and data optimization and multibit application options
+###############################################################################
+
+* Concurrent clock and data optimization is now on by default with an option to 
+  disable it during the rtl_opt or conditioning stage.
+
+  Concurrent clock and data optimization, multibit, direct timing-driven placement,
+  and congestion effort application options can be controlled through the 
+  user_conditioning_pre_script.tcl file set by default as shown below in the
+  rtl_setup.tcl file.
+
+ set TCL_USER_CONDITIONING_PRE_SCRIPT		"user_conditioning_pre_script.tcl"	
+
+###############################################################################
+# Added rtl_opt flow without break-points in flat flow
+###############################################################################
+
+* The rtl_opt command runs without break-points if the value for the 
+  TCL_USER_CONDITIONING_POST_SCRIPT and TCL_USER_ESTIMATION_PRE_SCRIPT variables
+  are not specified.
+
+###############################################################################
+# Added scenario power analysis and strip path for SAIF and FSDB files 
+###############################################################################
+
+* The FSDB related variables, FSDB_POWER_SCENARIO and FSDB_SOURCE_INSTANCE, are 
+  added in the rtl_setup.tcl file to capture the desired scenario and strip path
+  for power metrics. 
+
+  The SAIF related variables, SAIF_FILE_POWER_SCENARIO and SAIF_FILE_SOURCE_INSTANCE,
+  can be specified in the design_setup.tcl file.  
+  The EXPERT_PRIMEPOWER_MODE and EXPERT_PRIMEPOWER_SETTINGS variable settings are
+  removed.
+
+  If the SAIF and FSDB files are both specified, then the FSDB file gets priority
+  for power metrics computation.
+
+  To store and track name transformations, the saif_map -start command is run by
+  default after reading the design.
+
+###############################################################################
+# Added sample script for sweeping variable list using explore design 
+###############################################################################
+
+* Variable sweep and library sweep is added to explore_design.tcl.
+
+  Examples for frequency sweep, floorplan sweep, and application  options for 
+  macro placement sweep using variable sweep in explore design are provided in 
+  the explore_design_example.tcl sample script file under the rm_rtl_explore_scripts
+  directory.
+
+###############################################################################
+# Added set_technology command 
+###############################################################################
+
+* Technology node can be set by specifying technology node value for the  NODE 
+  variable in the rtl_setup.tcl file. This applies technology specific settings 
+  to the current design.
+
+###############################################################################
+# Added Early Data Handling checks
+###############################################################################
+
+* Design check manager can be controlled through the EARLY_DATA_CHECK_POLICY 
+  variable in the rtl_setup.tcl file. The default value for the EARLY_DATA_CHECK_POLICY 
+  variable is "lenient". Specify "none" to disable the set_early_data_check_policy
+  command.
+
+
+RTL Architect Reference Methodology training slide
+=====================
+https://solvnetplus.synopsys.com/s/article/RTL-Architect-Reference-Methodology#Training
+
+
+
+
+
+
+
+
+

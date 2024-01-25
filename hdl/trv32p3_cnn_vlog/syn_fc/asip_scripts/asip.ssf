@@ -1,0 +1,15 @@
+ssf_version 1.1
+
+# DCLS - SSF
+# ------------------------------------
+# create core rules
+create_safety_core_rule -name dcls1 -num_cores 2  -distance {5 5}
+#-routing_separation
+#-isolation -tap_mapping <lib_tapcells>
+
+# mark existing safety cores
+mark_safety_core -rule dcls1 \
+-cores {inst_trv32p3_cnn inst_trv32p3_cnn_secondary} \
+-error_signal {dcls_error_pri_out} \
+-split_pins {inst_trv32p3_cnn/clock inst_trv32p3_cnn_secondary/clock}
+

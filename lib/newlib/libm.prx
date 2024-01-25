@@ -1,0 +1,12 @@
+<project name="Project" processor="trv32p3_cnn" lib="..">
+    <import path="&lt;LIBSDIR&gt;/newlib-4.0.0/newlib/libm" name="libm.prx"/>
+    <option id="cpp.include" value="&lt;LIBSDIR&gt;/newlib-4.0.0/newlib/libm/common" inherit="1"/>
+    <option id="project.name" value="libm.a"/>
+    <option id="project.type" value="arch"/>
+    <configuration remove="1" parent="Release"/>
+    <configuration remove="1" parent="Debug"/>
+    <configuration remove="1" parent="Native"/>
+    <configuration remove="1" parent="Release_LLVM"/>
+    <configuration remove="1" parent="Debug_LLVM"/>
+    <option id="llvm.optim" value="s"/>
+</project>

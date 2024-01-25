@@ -1,0 +1,9 @@
+bin/
+*.exe
+iss/
+fptests/
+systemc/
+vcf/
+certitude/
+benchmarks/
+regression/

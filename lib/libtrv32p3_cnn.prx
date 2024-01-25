@@ -1,0 +1,12 @@
+<project name="Project" processor="trv32p3_cnn" lib=".">
+    <configuration remove="1" parent="Native"/>
+    <file type="a" name="trv32p3_cnn_init.s" path=""/>
+    <file type="c" name="trv32p3_cnn_basic.c" path="">
+        <option id="llvm.lang" value="c++"/>
+    </file>
+    <file type="c" name="trv32p3_cnn_c_div.c" path="">
+        <option id="llvm.lang" value="c++"/>
+    </file>
+    <option id="project.name" value="libtrv32p3_cnn.a"/>
+    <option id="project.type" value="arch"/>
+</project>

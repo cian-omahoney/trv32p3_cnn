@@ -1,0 +1,63 @@
+fu cnn;
+
+trn cnn_r1<w32>;
+trn cnn_r2<w32>;
+trn cnn_r3<w32>;
+trn cnn_w1<w32>;
+
+trn xuC<w32>; 
+trn xuB<w32>; 
+trn xuA<w32>; 
+
+trn cnn_R<w32>;
+
+opn cnn_instrs (
+    cnn_rrra_instr
+);
+
+enum cnn_rrra_op {
+  mac  = 0b1100000001,
+  TEN = 0b1111111111
+};
+
+opn cnn_rrra_instr(op: cnn_rrra_op, rd: eX, mrd: mX3rw, mrs1: mX1rw, mrs2: mX2rw)
+{
+    action {
+    stage EX: cnn_r1 = mrs1;
+              cnn_r2 = mrs2;
+              cnn_r3 = mrd;
+              
+              switch (op) {
+              case mac  :  cnn_w1 = cnn_R = mac(xuC=cnn_r3,xuA=cnn_r1,xuB=cnn_r2) @cnn;
+              }
+
+              if (rd: x0)         x_w1_dead = cnn_w1;
+              else                mrd = cnn_w1;
+    }
+    syntax : op PADMNM " " rd "," PADOP1 mrs1 "," PADOP2 mrs2;
+    image  : op[9..3] :: mrs2 :: mrs1 :: op[2..0] :: rd :: mrd<alias rd> :: opc32.OP;
+}
+
+
+/*
+fu user;
+trn userA <w32>;
+trn userB <w32>;
+trn userR <w32>;
+
+opn user_rrr_instr (op: e_user_rrr, rd: mX1w_EX, rs1: mX1r_EX, rs2: mX2r_EX) {
+  action {
+    stage EX:           userA = rs1;
+                        userB = rs2;
+    // ---
+    stage EX:
+      switch (op) {
+        case user1 :    userR = p_user1 (userA, userB) @user;
+      }
+    // ---
+    stage EX:           rd = userR;
+  }
+  syntax : op PADMNM " " rd "," PADOP1 rs1 "," PADOP2 rs2;
+  image  : op[9..3] :: rs2 :: rs1 :: op[2..0] :: rd :: opc32.OP;
+}
+*/

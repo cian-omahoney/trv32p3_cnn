@@ -1,0 +1,59 @@
+ModuleWritesRegister = div X
+ModuleReadsTransitory = div main divA divB div_wad
+ModuleWritesTransitory = div main X_x_w1_pdg_w_a x_w1
+ModuleReadsTransitory = div state_to_core 
+ModuleReadsTransitory = div div_adr_writer 
+ModuleWritesTransitory = div div_adr_writer div_adr
+ModuleReadsTransitory = div div_wnc_writer 
+ModuleWritesTransitory = div div_wnc_writer div_wnc
+ModuleReadsTransitory = div div_bsy_writer 
+ModuleWritesTransitory = div div_bsy_writer div_bsy
+ModuleProcess = div main
+ModuleProcess = div state_to_core
+ModuleProcess = div div_adr_writer
+ModuleProcess = div div_wnc_writer
+ModuleProcess = div div_bsy_writer
+MulticycleFunctionalUnitOperations = div main divR_divs_divA_divB_div_EX
+MulticycleFunctionalUnitOperations = div main divR_divu_divA_divB_div_EX
+MulticycleFunctionalUnitOperations = div main divR_rems_divA_divB_div_EX
+MulticycleFunctionalUnitOperations = div main divR_remu_divA_divB_div_EX
+ModuleLocalStorage = div div__B div__PA div__Q_addr_reg div__cnt div__is_div div__is_neg
+
+ModuleReadsTransitory = dm_merge process_result wdm_rd
+ModuleWritesTransitory = dm_merge process_result dmb_rd dmh_rd dmw_rd
+ModuleReadsTransitory = dm_merge process_request dm_addr dmb_st dmb_wr dmh_st dmh_wr dmw_st dmw_wr
+ModuleWritesTransitory = dm_merge process_request wdm_addr wdm_st wdm_wr
+ModuleReadsTransitory = dm_merge wdm_ld_writer dmb_ld dmh_ld dmw_ld
+ModuleWritesTransitory = dm_merge wdm_ld_writer wdm_ld
+ModuleProcess = dm_merge process_result
+ModuleProcess = dm_merge process_request
+ModuleProcess = dm_merge wdm_ld_writer
+nml_interface = dm_merge DMb
+mem_interface = dm_merge wDM
+ModuleLocalStorage = dm_merge dm_merge__col_ff dm_merge__st_ff
+
+ModuleDbgAccess = dm_merge dbg_access_DMb
+
+ModuleReadsTransitory = dm_wbb process_result edm_rd
+ModuleWritesTransitory = dm_wbb process_result wdm_rd
+ModuleReadsTransitory = dm_wbb process_request wdm_addr wdm_ld wdm_st wdm_wr
+ModuleWritesTransitory = dm_wbb process_request edm_addr edm_st edm_wr
+ModuleReadsTransitory = dm_wbb edm_ld_writer wdm_ld
+ModuleWritesTransitory = dm_wbb edm_ld_writer edm_ld
+ModuleProcess = dm_wbb process_result
+ModuleProcess = dm_wbb process_request
+ModuleProcess = dm_wbb edm_ld_writer
+nml_interface = dm_wbb wDM
+mem_interface = dm_wbb eDM
+ModuleLocalStorage = dm_wbb dm_wbb__edm_addr_ff dm_wbb__edm_addr_match_ff dm_wbb__edm_data_ff dm_wbb__edm_st_ff dm_wbb__edm_strb_ff dm_wbb__edm_wbb_ff
+ModuleLocalStorageDbgAccess = dm_wbb dm_wbb__edm_addr_ff f dm_wbb__edm_data_ff f dm_wbb__edm_strb_ff f dm_wbb__edm_wbb_ff f
+ModuleDbgAccess = dm_wbb dbg_access_wDM
+
+
+PDGTypes = uint1_t uint2_t uint32_t uint3_t uint4_t uint4_t_as_vect uint5_t uint64_t uint6_t v4u8 
+
+NumberOfPdgModules = 5
+
+NumberOfPrimitveCFiles = 1
+
+PrimitivesNotGeneratedByPdg =w32_jal_t21s_s2 w32_jalr_w32 void_j_t21s_s2 void_jr_w32 void_br_bool_t13s_s2 w32_zext_08_w32 w32_w32_t5u w32_w32_t12s w32_w32_t20s_rp12 w32_w32_addr w32_w32_t21s_s2 w32_w32_t13s_s2 w32_w32_t31s_rp1 t31s_rp1_t31s_rp1_w32 w08_w08_w32 w16_w16_w32 addr_addr_w32

@@ -1,0 +1,17 @@
+<prxusersettings>
+    <zlayout>
+        <perspective type="nml">
+            <VerPaneNode>
+                <HorPaneNode size="2">
+                    <ViewBookNode size="2">
+                        <window name="ProjectView" visible="1" select="1"/>
+                    </ViewBookNode>
+                    <EditorBookNode size="3"/>
+                </HorPaneNode>
+                <ViewBookNode size="1">
+                    <window name="ConsoleView" visible="1" select="1"/>
+                </ViewBookNode>
+            </VerPaneNode>
+        </perspective>
+    </zlayout>
+</prxusersettings>
