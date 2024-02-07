@@ -17,7 +17,7 @@
 w32 add(w32 a, w32 b) { return a + b; }
 w32 sub(w32 a, w32 b) { return a - b; }
 
-w32 slt (w32 a, w32 b) { return a <  b; }
+w32 slt (w32 a, w32 b) { return a < b; }
 w32 sltu(w32 a, w32 b) { return (uint32_t)a <  (uint32_t)b; }
 
 w32 seq0(w32 a) { return a == 0; }

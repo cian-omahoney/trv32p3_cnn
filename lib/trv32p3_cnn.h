@@ -68,7 +68,6 @@ namespace trv32p3_cnn_primitive {
 
   // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   // ~~~ Integer Arithmetic
-
   w32 add    (w32,w32)       property(commutative);
   w32 sub    (w32,w32);
   w32 slt    (w32,w32);
@@ -83,7 +82,7 @@ namespace trv32p3_cnn_primitive {
   w32 sll    (w32,w32);
   w32 srl    (w32,w32);
   w32 sra    (w32,w32);
-
+  
   w32 mul    (w32,w32)       property(programmers_view commutative);
   w32 mulh   (w32,w32)       property(programmers_view commutative);
   w32 mulhsu (w32,w32)       property(programmers_view);

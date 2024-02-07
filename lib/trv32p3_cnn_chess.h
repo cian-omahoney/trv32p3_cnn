@@ -182,6 +182,11 @@ chess_properties {
 #include "trv32p3_cnn_c_double.h"
 #include "trv32p3_cnn_c_divbyct.h"
 #include "trv32p3_cnn_c_userext.h"
+#include "cnn_c.h"
+
+
+
 #include "trv32p3_cnn_c_rewrite.h"
+
 
 #endif // INCLUDED_TRV32P3_CNN_CHESS_H_

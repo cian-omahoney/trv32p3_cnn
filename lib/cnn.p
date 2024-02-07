@@ -26,5 +26,3 @@ w32 mac(w32 c, w32 a, w32 b)  {
   
   return result;
 }
-
-

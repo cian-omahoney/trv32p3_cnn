@@ -89,6 +89,7 @@
         <option id="project.dasobj" value="on"/>
         <option id="project.dastgt" value="on"/>
         <option id="project.dwarf" value="on"/>
+        <option id="project.name" value="trv32p3_cnn"/>
     </compilation>
     <execution name="Run / debug">
         <execonfig name="default"/>

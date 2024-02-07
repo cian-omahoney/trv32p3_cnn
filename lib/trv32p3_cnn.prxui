@@ -6,12 +6,39 @@
                     <ViewBookNode size="2">
                         <window name="ProjectView" visible="1" select="1"/>
                     </ViewBookNode>
-                    <EditorBookNode size="3"/>
+                    <EditorBookNode size="3">
+                        <window name="editor0" visible="1" select="0"/>
+                        <window name="editor1" visible="1" select="0"/>
+                        <window name="editor2" visible="1" select="0"/>
+                        <window name="editor3" visible="1" select="1"/>
+                        <window name="editor4" visible="1" select="0"/>
+                        <window name="editor5" visible="1" select="0"/>
+                        <window name="editor6" visible="1" select="0"/>
+                        <window name="editor7" visible="1" select="0"/>
+                        <window name="editor8" visible="1" select="0"/>
+                        <window name="editor9" visible="1" select="0"/>
+                        <window name="editor10" visible="1" select="0"/>
+                        <window name="editor11" visible="1" select="0"/>
+                        <window name="editor12" visible="1" select="0"/>
+                    </EditorBookNode>
                 </HorPaneNode>
                 <ViewBookNode size="1">
                     <window name="ConsoleView" visible="1" select="1"/>
                 </ViewBookNode>
             </VerPaneNode>
         </perspective>
+        <editor id="editor0" file="trv32p3_cnn.n" top="49.0" cursor="60.14" foldmap="1" linemap="0"/>
+        <editor id="editor1" file="opc.n" top="51.0" cursor="62.0" foldmap="1" linemap="0"/>
+        <editor id="editor2" file="userext.n" top="57.0" cursor="47.15" foldmap="1" linemap="0"/>
+        <editor id="editor3" file="cnn.n" top="57.0" cursor="71.15" foldmap="1" linemap="0"/>
+        <editor id="editor4" file="alu.n" top="65.0" cursor="74.13" foldmap="1" linemap="0"/>
+        <editor id="editor5" file="trv32p3_cnn.p" top="17.0" cursor="26.39" foldmap="1" linemap="0"/>
+        <editor id="editor6" file="trv32p3_cnn.h" top="1.0" cursor="85.2" foldmap="1" linemap="0"/>
+        <editor id="editor7" file="mpy.n" top="86.0" cursor="1.0" foldmap="1" linemap="0"/>
+        <editor id="editor8" file="cnn_c.h" top="1.0" cursor="4.0" foldmap="1" linemap="0"/>
+        <editor id="editor9" file="cnn.p" top="1.0" cursor="4.40" foldmap="1" linemap="0"/>
+        <editor id="editor10" file="trv32p3_cnn_c_userext-types.h" top="29.0" cursor="1.0" foldmap="1" linemap="0"/>
+        <editor id="editor11" file="trv32p3_cnn_p_userext.h" top="12.0" cursor="1.0" foldmap="1" linemap="0"/>
+        <editor id="editor12" file="cnn_p.h" top="1.0" cursor="14.10" foldmap="1" linemap="0"/>
     </zlayout>
 </prxusersettings>
