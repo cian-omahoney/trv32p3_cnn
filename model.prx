@@ -7,11 +7,8 @@
     <prj name="trv32p3_cnn_ca-fst" path="iss"/>
     <prj name="trv32p3_cnn_vlog" path="hdl"/>
     <prj name="libnative" path="lib" configuration="Native"/>
-<<<<<<< HEAD
     <prj name="libtrv32p3_cnn.prx" path="lib" configuration="Debug"/>
     <prj name="libc.prx" path="lib/runtime" configuration="Debug"/>
     <prj name="libm.prx" path="lib/runtime" configuration="Debug"/>
     <prj name="libsoftfloat3e.prx" path="lib/softfloat" configuration="Debug"/>
-=======
->>>>>>> 4598ee6aea7e54d7c8d2ee3c7f6dc45be2dcb746
 </batch>
