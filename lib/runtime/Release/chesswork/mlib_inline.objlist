@@ -1,9 +1,0 @@
-"mlib_inline-fabsf_.o" 0
-"mlib_inline-copysignf_.o" 0
-"mlib_inline-fabs_.o" 0
-"mlib_inline-copysign_.o" 0
-"mlib_inline-truncf_.o" 0
-"mlib_inline-trunc_.o" 0
-"mlib_inline-frexpf_.o" 0
-"mlib_inline-frexp_.o" 0
-"mlib_inline.gvt.o" 0
