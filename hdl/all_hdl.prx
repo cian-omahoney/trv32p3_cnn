@@ -1,7 +1,0 @@
-<batch name="Batch project" processor="trv32p3_cnn" lib="../lib">
-    <prj name="trv32p3_cnn_vlog.prx" path=""/>
-    <prj name="trv32p3_cnn_vhdl.prx" path=""/>
-    <prj name="trv32p3_cnn_vlog-isacov.prx" path=""/>
-    <prj name="trv32p3_cnn_vlog-hwswdbg.prx" path=""/>
-    <prj name="trv32p3_cnn_vlog-c1.prx" path=""/>
-</batch>

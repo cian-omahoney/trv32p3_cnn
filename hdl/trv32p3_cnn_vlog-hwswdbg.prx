@@ -1,6 +1,0 @@
-<hdlgenerator name="HDL project" processor="trv32p3_cnn" lib="../lib">
-    <option id="hdl.gcf" value="go_options-hwswdbg.cfg"/>
-    <option id="hdl.lang" value="vlog"/>
-    <option id="hdl.outdir" value="trv32p3_cnn_vlog-hwswdbg"/>
-    <option id="cpp.define" value="SYNTHESIS_NO_UNGROUP" inherit="1"/>
-</hdlgenerator>
