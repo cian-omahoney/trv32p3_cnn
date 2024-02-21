@@ -1,0 +1,24 @@
+<prxusersettings>
+    <zlayout>
+        <perspective type="hdl">
+            <VerPaneNode>
+                <HorPaneNode size="2">
+                    <ViewBookNode size="2">
+                        <window name="ProjectView" visible="1" select="1"/>
+                    </ViewBookNode>
+                    <EditorBookNode size="3">
+                        <window name="editor0" visible="1" select="0"/>
+                        <window name="editor1" visible="1" select="1"/>
+                        <window name="editor2" visible="1" select="0"/>
+                    </EditorBookNode>
+                </HorPaneNode>
+                <ViewBookNode size="1">
+                    <window name="ConsoleView" visible="1" select="1"/>
+                </ViewBookNode>
+            </VerPaneNode>
+        </perspective>
+        <editor id="editor0" file="go_options.cfg" top="1.0" cursor="1.0" foldmap="1" linemap="0"/>
+        <editor id="editor1" file="go_options-common.cfg" top="34.0" cursor="63.17" foldmap="1" linemap="0"/>
+        <editor id="editor2" file="go_options-sim.cfg" top="69.0" cursor="1.0" foldmap="1" linemap="0"/>
+    </zlayout>
+</prxusersettings>

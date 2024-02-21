@@ -1,0 +1,13 @@
+bin/
+*.exe
+iss/
+fptests/
+systemc/
+vcf/
+certitude/
+benchmarks/
+regression/
+<<<<<<< HEAD
+debug_client/
+=======
+>>>>>>> 4598ee6aea7e54d7c8d2ee3c7f6dc45be2dcb746

@@ -1,0 +1,64 @@
+##########################################################################################
+# Tool: RTL Architect
+# Script: Makefile_rtla_explore
+# Version: T-2022.06
+# Copyright (C) 2019-2022 Synopsys, Inc. All rights reserved.
+##########################################################################################
+RTL_EXEC  = 
+LOGS_DIR  = logs_rtl
+OPTIONS   = 
+
+
+setup:
+	test -d $(LOGS_DIR)	|| mkdir $(LOGS_DIR)
+	date > setup
+
+init_design		: setup
+	$(RTL_EXEC) $(OPTIONS) -f ./rm_rtl_explore_scripts/init_design.tcl | tee -i $(LOGS_DIR)/init_design.log
+
+explore_design		: setup init_design
+	$(RTL_EXEC) $(OPTIONS) -f ./rm_rtl_explore_scripts/explore_design.tcl | tee -i $(LOGS_DIR)/explore_design.log
+
+all			: setup explore_design 
+	date > all
+######### BEGIN CHANGED FOR ASIP SCRIPTS ############
+# Ignoring return status from 'egrep', since Makefile
+# exits with error if the <pattern> does not match, i.e.,
+# no errors during synthesis
+# Original:
+#	egrep "^Error" ./$(LOGS_DIR)/*.log* > $(LOGS_DIR)/list.error
+#	more $(LOGS_DIR)/list.error
+# Changed to:
+	egrep -n "^Error" ./$(LOGS_DIR)/*.log* > $(LOGS_DIR)/list.error || true;\
+	egrep -n -i "^RM-error" $(LOGS_DIR)/*.log* >> $(LOGS_DIR)/list.error || true;\
+	echo "Peek at errors (max:40 lines):"; head -n 40 -v $(LOGS_DIR)/list.error
+######### END CHANGED FOR ASIP SCRIPTS ############
+
+################################################################################################################
+# Utilities Section
+################################################################################################################
+view_copy:
+	$(RTL_EXEC) $(OPTIONS) -x "source ./rm_rtl_explore_scripts/view_copy.tcl" | tee -i $(LOGS_DIR)/view_copy.log
+
+view_in_place:
+	$(RTL_EXEC) $(OPTIONS) -x "source ./rm_rtl_explore_scripts/view_in_place.tcl" | tee -i $(LOGS_DIR)/view_in_place.log
+
+
+################################################################################################################
+# Utilities Section
+################################################################################################################
+clean: 
+	rm -rf setup init_design explore_design all *~
+
+clean_all: clean
+	rm -rf $(LOGS_DIR) work/ work_dir/ HDL_LIBRARIES/
+	rm -rf *command.log rtl_output.txt fusa_redundancy_cstr.sgdc .*.paths
+	rm -rf block_budgets/ initial_block_budgets/ split/ split* *nlib
+	rm -rf *rtl RTLA_WORKSPACE 
+
+
+
+
+
+
+

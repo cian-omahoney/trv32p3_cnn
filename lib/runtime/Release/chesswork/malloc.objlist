@@ -1,0 +1,6 @@
+"malloc-init_.o" 0
+"malloc-free_.o" 0
+"malloc-malloc_.o" 0
+"malloc-calloc_.o" 0
+"malloc-realloc_.o" 0
+"malloc.gvt.o" 0

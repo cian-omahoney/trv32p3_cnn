@@ -1,0 +1,75 @@
+#------------------------------------------------
+# File       : spyglass.swl
+# Description: AsipDesigner Spyglass Waiver File
+#------------------------------------------------
+
+
+#----------------------------------------------------------
+# DISABLE: AutomaticFuncTask-ML (Use automatic functions/tasks in modules and interfaces)
+# REASON : go does not use tasks/functions recursively
+waive -rule "AutomaticFuncTask-ML"
+
+#----------------------------------------------------------
+# DISABLE: SelfDeterminedExpr-ML (Self determined expression present in the design)
+# REASON :
+waive -rule "SelfDeterminedExpr-ML"
+
+#----------------------------------------------------------
+# DISABLE: WRN_1024 (signed argument passed to $signed system function call)
+# REASON : This are valid assignments and happen in some places where the RHS is not a bit select
+waive -rule "WRN_1024"
+
+#----------------------------------------------------------
+# DISABLE: W164a (Identifies assignments in which the LHS width is less than the RHS width)
+# REASON :
+waive -rule "W164a"
+
+#----------------------------------------------------------
+# DISABLE: W193 (Empty statement)
+# REASON : Go by default generates default statements for case blocks,
+#          which maybe empty. If this is not desired, specify go option
+#          'default_in_case_statement:0;' 
+waive -rule "W193"
+
+#----------------------------------------------------------
+# DISABLE: W240 (An input has been declared but is not read)
+# REASON : Go may remove such ports in a future release
+waive -rule "W240"
+
+#----------------------------------------------------------
+# DISABLE: W287b (Output port to an instance is not connected)
+# REASON : This message is output when not all bits of an output vector are used,
+#          for example for the decode output. It is undesirable to output only parts of the vector.
+waive -rule "W287b"
+
+#----------------------------------------------------------
+# DISABLE: W426 (Ensure that the task does not set a global variable)
+# REASON : In certain cases Go uses tasks to set a global variable.
+#          If this is not desired, specify go option 'split_register_files:0;'
+waive -rule "W426"
+
+#----------------------------------------------------------
+# DISABLE: W468 (Index variable is too short)
+# REASON : Go keeps track of the width of the index and always ensures that the index has the
+#          proper minimal width. Beside this, Go relies on the LRM implicit type conversion.
+waive -rule "W468"
+
+#----------------------------------------------------------
+# DISABLE: W480 (Ensure that the loop index is of integer type)
+# REASON : In Verilog it is allowed to have reg as type for control variables.
+#          Go sometimes needs this for loops, where the index itself is used in statements
+waive -rule "W480"
+
+#----------------------------------------------------------
+# DISABLE: W528 (A signal or variable is set but never read)
+# REASON :
+waive -rule "W528"
+
+#----------------------------------------------------------
+# DISABLE: STARC-2.3.4.3 (A flip-flop should have an asynchronous set or an asynchronous reset)
+# REASON : The designer can select that all or certain FFs should have no set or reset.
+#          If a reset is desired, it can be done in the following ways:
+#          - For certain FFs, in nML specify 'hw_init'
+#          - For multi-stage pipeline-FFs, specify go option'reset_multi_stage_pipe:1;'
+#          - For all FFs, specify go option 'reset_all_registers:1;'
+waive -rule "STARC-2.3.4.3"

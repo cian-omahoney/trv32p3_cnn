@@ -1,0 +1,172 @@
+# Spyglass Project File
+
+set top trv32p3_cnn
+
+if { [info exists env(ASIP_SPY_METHOD)] } {
+    set spy_method $env(ASIP_SPY_METHOD)
+} else {
+    set spy_method ${SPYGLASS_HOME}/GuideWare/latest/block/rtl_handoff
+}
+set_option current_methodology ${spy_method}
+set_option active_methodology  ${spy_method}
+set_option project_read_only yes
+
+# ASIP RTL allows multiple blocking assignments to same signal (rule W415a)
+set_parameter checknonblocking yes
+# ASIP RTL sets width as per LRM
+set_parameter nocheckoverflow yes
+# read user waiver file, if existing
+set spy_waiver_file "spyglass.swl"
+if { [info exists env(ASIP_SPY_WAIVER_FILE)] } {
+    set spy_waiver_file $env(ASIP_SPY_WAIVER_FILE)
+    read_file -type awl ${spy_waiver_file}
+} else {
+    # read generated waiver file
+    read_file -type waiver spyglass.swl
+}
+
+if { [info exists env(ASIP_SPY_RULES_FILE)] } {
+  # use additional rules
+  if { [info exists env(ASIP_SPY_GOAL)] } {
+    current_goal $env(ASIP_SPY_GOAL)
+  } else {
+    current_goal lint/lint_rtl
+  }
+  source $env(ASIP_SPY_RULES_FILE)
+}
+
+set spy_lang "vhdl"
+set_option lib  trv32p3_cnn_lib trv32p3_cnn/go_bin
+set_option work trv32p3_cnn_lib
+if { [info exists env(SYNOPSYS)] } {
+    # design may contain DW components
+    set SYNOPSYS $::env(SYNOPSYS)
+    set_option dw yes
+}
+
+read_file -type ${spy_lang} trv32p3_cnn/data_types.vhd
+read_file -type ${spy_lang} trv32p3_cnn/controller/cntrl_types.vhd
+read_file -type ${spy_lang} trv32p3_cnn/controller/controller_ent.vhd
+read_file -type ${spy_lang} trv32p3_cnn/controller/controller_arch.vhd
+read_file -type ${spy_lang} trv32p3_cnn/controller/hazards_ent.vhd
+read_file -type ${spy_lang} trv32p3_cnn/controller/hazards_arch.vhd
+read_file -type ${spy_lang} trv32p3_cnn/controller/jtag_scan_register_ent.vhd
+read_file -type ${spy_lang} trv32p3_cnn/controller/jtag_scan_register_arch.vhd
+read_file -type ${spy_lang} trv32p3_cnn/controller/debug_controller_ent.vhd
+read_file -type ${spy_lang} trv32p3_cnn/controller/debug_controller_arch.vhd
+read_file -type ${spy_lang} trv32p3_cnn/controller/jtag_interface_ent.vhd
+read_file -type ${spy_lang} trv32p3_cnn/controller/jtag_interface_arch.vhd
+read_file -type ${spy_lang} trv32p3_cnn/controller/jtag_tap_controller_ent.vhd
+read_file -type ${spy_lang} trv32p3_cnn/controller/jtag_tap_controller_arch.vhd
+read_file -type ${spy_lang} trv32p3_cnn/controller/decoder_ent.vhd
+read_file -type ${spy_lang} trv32p3_cnn/controller/decoder_arch.vhd
+read_file -type ${spy_lang} trv32p3_cnn/mux/mux_pm_addr_ent.vhd
+read_file -type ${spy_lang} trv32p3_cnn/mux/mux_pm_addr_arch.vhd
+read_file -type ${spy_lang} trv32p3_cnn/mux/mux_pm_wr_ent.vhd
+read_file -type ${spy_lang} trv32p3_cnn/mux/mux_pm_wr_arch.vhd
+read_file -type ${spy_lang} trv32p3_cnn/mux/mux_dm_addr_ent.vhd
+read_file -type ${spy_lang} trv32p3_cnn/mux/mux_dm_addr_arch.vhd
+read_file -type ${spy_lang} trv32p3_cnn/mux/mux_dmb_wr_ent.vhd
+read_file -type ${spy_lang} trv32p3_cnn/mux/mux_dmb_wr_arch.vhd
+read_file -type ${spy_lang} trv32p3_cnn/mux/mux_x_w1_ent.vhd
+read_file -type ${spy_lang} trv32p3_cnn/mux/mux_x_w1_arch.vhd
+read_file -type ${spy_lang} trv32p3_cnn/mux/mux_x_w1_dead_ent.vhd
+read_file -type ${spy_lang} trv32p3_cnn/mux/mux_x_w1_dead_arch.vhd
+read_file -type ${spy_lang} trv32p3_cnn/mux/mux_ocd_data_w_ent.vhd
+read_file -type ${spy_lang} trv32p3_cnn/mux/mux_ocd_data_w_arch.vhd
+read_file -type ${spy_lang} trv32p3_cnn/mux/mux_ocd_instr_w_ent.vhd
+read_file -type ${spy_lang} trv32p3_cnn/mux/mux_ocd_instr_w_arch.vhd
+read_file -type ${spy_lang} trv32p3_cnn/mux/mux_aluA_ent.vhd
+read_file -type ${spy_lang} trv32p3_cnn/mux/mux_aluA_arch.vhd
+read_file -type ${spy_lang} trv32p3_cnn/mux/mux_aluB_ent.vhd
+read_file -type ${spy_lang} trv32p3_cnn/mux/mux_aluB_arch.vhd
+read_file -type ${spy_lang} trv32p3_cnn/mux/mux_pcaA_ent.vhd
+read_file -type ${spy_lang} trv32p3_cnn/mux/mux_pcaA_arch.vhd
+read_file -type ${spy_lang} trv32p3_cnn/mux/mux_pcaB_ent.vhd
+read_file -type ${spy_lang} trv32p3_cnn/mux/mux_pcaB_arch.vhd
+read_file -type ${spy_lang} trv32p3_cnn/mux/mux_jmp_tgt_ID_ent.vhd
+read_file -type ${spy_lang} trv32p3_cnn/mux/mux_jmp_tgt_ID_arch.vhd
+read_file -type ${spy_lang} trv32p3_cnn/mux/mux_aguB_ent.vhd
+read_file -type ${spy_lang} trv32p3_cnn/mux/mux_aguB_arch.vhd
+read_file -type ${spy_lang} trv32p3_cnn/mux/mux_mpyM_ent.vhd
+read_file -type ${spy_lang} trv32p3_cnn/mux/mux_mpyM_arch.vhd
+read_file -type ${spy_lang} trv32p3_cnn/mux/mux_ocd_swbreak_ent.vhd
+read_file -type ${spy_lang} trv32p3_cnn/mux/mux_ocd_swbreak_arch.vhd
+read_file -type ${spy_lang} trv32p3_cnn/mux/mux_pidTGT_w_ent.vhd
+read_file -type ${spy_lang} trv32p3_cnn/mux/mux_pidTGT_w_arch.vhd
+read_file -type ${spy_lang} trv32p3_cnn/mux/mux_X_x_w1_wad_ent.vhd
+read_file -type ${spy_lang} trv32p3_cnn/mux/mux_X_x_w1_wad_arch.vhd
+read_file -type ${spy_lang} trv32p3_cnn/pipe/pipe_pidTGT_ent.vhd
+read_file -type ${spy_lang} trv32p3_cnn/pipe/pipe_pidTGT_arch.vhd
+read_file -type ${spy_lang} trv32p3_cnn/pipe/pipe_ocd_ld_DMbEX_ent.vhd
+read_file -type ${spy_lang} trv32p3_cnn/pipe/pipe_ocd_ld_DMbEX_arch.vhd
+read_file -type ${spy_lang} trv32p3_cnn/pipe/pipe_ocd_ld_DMbS3_ent.vhd
+read_file -type ${spy_lang} trv32p3_cnn/pipe/pipe_ocd_ld_DMbS3_arch.vhd
+read_file -type ${spy_lang} trv32p3_cnn/pipe/pipe_ocd_st_DMbEX_ent.vhd
+read_file -type ${spy_lang} trv32p3_cnn/pipe/pipe_ocd_st_DMbEX_arch.vhd
+read_file -type ${spy_lang} trv32p3_cnn/pipe/pipe_ocd_st_DMbS3_ent.vhd
+read_file -type ${spy_lang} trv32p3_cnn/pipe/pipe_ocd_st_DMbS3_arch.vhd
+read_file -type ${spy_lang} trv32p3_cnn/pipe/pipe_ocd_ld_PMbEX_ent.vhd
+read_file -type ${spy_lang} trv32p3_cnn/pipe/pipe_ocd_ld_PMbEX_arch.vhd
+read_file -type ${spy_lang} trv32p3_cnn/pipe/pipe_ocd_ld_PMbS3_ent.vhd
+read_file -type ${spy_lang} trv32p3_cnn/pipe/pipe_ocd_ld_PMbS3_arch.vhd
+read_file -type ${spy_lang} trv32p3_cnn/pipe/pipe_ocd_st_PMbEX_ent.vhd
+read_file -type ${spy_lang} trv32p3_cnn/pipe/pipe_ocd_st_PMbEX_arch.vhd
+read_file -type ${spy_lang} trv32p3_cnn/reg/reg_PC_ent.vhd
+read_file -type ${spy_lang} trv32p3_cnn/reg/reg_PC_arch.vhd
+read_file -type ${spy_lang} trv32p3_cnn/reg/reg_PC_ID_ent.vhd
+read_file -type ${spy_lang} trv32p3_cnn/reg/reg_PC_ID_arch.vhd
+read_file -type ${spy_lang} trv32p3_cnn/reg/reg_PC_EX_ent.vhd
+read_file -type ${spy_lang} trv32p3_cnn/reg/reg_PC_EX_arch.vhd
+read_file -type ${spy_lang} trv32p3_cnn/reg/reg_X_ent.vhd
+read_file -type ${spy_lang} trv32p3_cnn/reg/reg_X_arch.vhd
+read_file -type ${spy_lang} trv32p3_cnn/reg/reg_ocd_addr_ent.vhd
+read_file -type ${spy_lang} trv32p3_cnn/reg/reg_ocd_addr_arch.vhd
+read_file -type ${spy_lang} trv32p3_cnn/reg/reg_ocd_data_ent.vhd
+read_file -type ${spy_lang} trv32p3_cnn/reg/reg_ocd_data_arch.vhd
+read_file -type ${spy_lang} trv32p3_cnn/reg/reg_ocd_instr_ent.vhd
+read_file -type ${spy_lang} trv32p3_cnn/reg/reg_ocd_instr_arch.vhd
+read_file -type ${spy_lang} trv32p3_cnn/mem/dm_merge.vhd
+read_file -type ${spy_lang} trv32p3_cnn/mem/dm_wbb.vhd
+read_file -type ${spy_lang} trv32p3_cnn/mem/mem_PMb_ent.vhd
+read_file -type ${spy_lang} trv32p3_cnn/mem/mem_PMb_arch.vhd
+read_file -type ${spy_lang} trv32p3_cnn/mem/mem_DMb_ent.vhd
+read_file -type ${spy_lang} trv32p3_cnn/mem/mem_DMb_arch.vhd
+read_file -type ${spy_lang} trv32p3_cnn/prim/primitives.vhd
+read_file -type ${spy_lang} trv32p3_cnn/prim/alu_ent.vhd
+read_file -type ${spy_lang} trv32p3_cnn/prim/alu_arch.vhd
+read_file -type ${spy_lang} trv32p3_cnn/prim/pca_ent.vhd
+read_file -type ${spy_lang} trv32p3_cnn/prim/pca_arch.vhd
+read_file -type ${spy_lang} trv32p3_cnn/prim/cmp_ent.vhd
+read_file -type ${spy_lang} trv32p3_cnn/prim/cmp_arch.vhd
+read_file -type ${spy_lang} trv32p3_cnn/prim/div.vhd
+read_file -type ${spy_lang} trv32p3_cnn/prim/lx_ent.vhd
+read_file -type ${spy_lang} trv32p3_cnn/prim/lx_arch.vhd
+read_file -type ${spy_lang} trv32p3_cnn/prim/agu_ent.vhd
+read_file -type ${spy_lang} trv32p3_cnn/prim/agu_arch.vhd
+read_file -type ${spy_lang} trv32p3_cnn/prim/mpy_ent.vhd
+read_file -type ${spy_lang} trv32p3_cnn/prim/mpy_arch.vhd
+read_file -type ${spy_lang} trv32p3_cnn/prim/ocd_addr_incr_ent.vhd
+read_file -type ${spy_lang} trv32p3_cnn/prim/ocd_addr_incr_arch.vhd
+read_file -type ${spy_lang} trv32p3_cnn/prim/cnn_ent.vhd
+read_file -type ${spy_lang} trv32p3_cnn/prim/cnn_arch.vhd
+read_file -type ${spy_lang} trv32p3_cnn/trv32p3_cnn_ent.vhd
+read_file -type ${spy_lang} trv32p3_cnn/trv32p3_cnn_arch.vhd
+read_file -type ${spy_lang} trv32p3_cnn/trv32p3_cnn_config.vhd
+
+if { ![info exists asip_already_run] } {
+  global asip_already_run
+  set asip_already_run 1
+  puts "###################################################"
+  puts "# Spyglass running with:"
+  puts "# - top                = ${top}"
+  puts "# - method             = ${spy_method}"
+  if { [info exists env(ASIP_SPY_GOAL)] } {
+    puts "# - goal               = $env(ASIP_SPY_GOAL)"
+  }
+  if { [info exists env(ASIP_SPY_RULES_FILE)] } {
+    puts "# - add.rules_file     = $env(ASIP_SPY_RULES_FILE)"
+  }
+  puts "# - waiver_file        = ${spy_waiver_file}"
+  puts "###################################################"
+}

@@ -1,0 +1,5 @@
+<hdlgenerator name="HDL project" processor="trv32p3_cnn" lib="../lib">
+    <option id="hdl.gcf" value="go_options-isacov.cfg"/>
+    <option id="hdl.lang" value="vlog"/>
+    <option id="hdl.outdir" value="trv32p3_cnn_vlog-isacov"/>
+</hdlgenerator>

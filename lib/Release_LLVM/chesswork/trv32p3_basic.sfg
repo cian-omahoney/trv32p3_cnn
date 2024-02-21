@@ -1,0 +1,232 @@
+
+// Function: i32 _start_basic(i32 , (NOTE: unhandled type) )
+[
+  0 : _start_basic bnd=e
+  1 : _cst val=1f typ=__i1
+  2 : __arg0 typ=__i32
+  3 : __arg1 typ=__Pvoid
+  4 : __ret typ=__i32
+  5 : argv typ=__Pvoid tref2=l0v0
+  6 : argc typ=__i32 tref2=l1v0
+  7 : main bnd=e
+  8 : _cst val=0f
+  9 : __tmp typ=__i32
+  10 : _Z10chess_exiti bnd=e
+]
+L_start_basic
+{
+  { // BB#0
+    ( vreg.1 var=1 ) const ( ) <1>;
+    ( vreg.2 var=6 ) inp ( ) <2>;
+    ( vreg.3 var=5 ) inp ( ) <3>;
+    ( vreg.4 var=4 ) signature_out ( ) <4>;
+    ( vreg.5 var=7 ) const ( ) <5>;
+    ( vreg.6 var=8 ) const ( ) <6>;
+    ( vreg.8 var=9 ) lcall /* main */ ( vreg.6 vreg.5 vreg.2 vreg.3 ) <7>;
+    ( vreg.9 var=10 ) const ( ) <9>;
+    ( vreg.10 var=8 ) const ( ) <10>;
+    ( ) lcall /* _Z10chess_exiti */ ( vreg.10 vreg.9 vreg.8 ) <11>;
+  } #2
+  { // no associated BB
+  } #3 nxt=-4
+} #1
+0 : '_start_basic';
+1 : 'trv32p3_basic.c';
+----------
+0 : (0,0:0,0);
+1 : (1,14:0,2);
+2 : (1,14:0,2);
+----------
+2 : (1,15:13,1);
+3 : (1,15:13,1);
+4 : (1,15:13,1);
+5 : (1,15:13,1,1);
+6 : (1,15:13,1,1);
+7 : (1,15:13,1,1);
+9 : (1,15:2,1,1);
+10 : (1,15:2,1,1);
+11 : (1,15:2,1,1);
+==========ranges_locs
+0: ' ';
+1: ' l1v0 l0v0 ';
+==========attributes
+0: 'llvm:never_returns';
+
+[
+]
+llvmgvt
+{ // no associated BB
+} #0
+0 : './dummy_file';
+----------
+0 : (0,0:0,0);
+----------
+==========debug_type_info
+==========data_init
+	.file	1 "/home/students/st20/CianOMahoney/trv32p3/lib/trv32p3_basic.c"
+	.section	.debug_loc,"",@progbits
+__start_basic___debug_loc0:
+	.long	0
+	.long	0
+__start_basic___debug_loc1:
+	.long	0
+	.long	0
+	.section	.debug_abbrev,"",@progbits
+	.byte	1
+	.byte	17
+	.byte	1
+	.byte	37
+	.byte	14
+	.byte	19
+	.byte	5
+	.byte	3
+	.byte	14
+	.byte	16
+	.byte	23
+	.byte	27
+	.byte	14
+	.byte	85
+	.byte	23
+	.byte	0
+	.byte	0
+	.byte	2
+	.byte	46
+	.byte	1
+	.byte	17
+	.byte	1
+	.byte	18
+	.byte	1
+	.byte	64
+	.byte	24
+	.ascii	"\227B"
+	.byte	25
+	.byte	3
+	.byte	14
+	.byte	58
+	.byte	11
+	.byte	59
+	.byte	11
+	.byte	73
+	.byte	19
+	.byte	63
+	.byte	25
+	.byte	0
+	.byte	0
+	.byte	3
+	.byte	5
+	.byte	0
+	.byte	2
+	.byte	23
+	.byte	3
+	.byte	14
+	.byte	58
+	.byte	11
+	.byte	59
+	.byte	11
+	.byte	73
+	.byte	19
+	.byte	0
+	.byte	0
+	.byte	4
+	.byte	36
+	.byte	0
+	.byte	3
+	.byte	14
+	.byte	62
+	.byte	11
+	.byte	11
+	.byte	11
+	.byte	0
+	.byte	0
+	.byte	5
+	.byte	15
+	.byte	0
+	.byte	73
+	.byte	19
+	.byte	13
+	.byte	11
+	.byte	0
+	.byte	0
+	.byte	0
+	.section	.debug_info,"",@progbits
+_cu_begin0:
+.set _set0, _debug_info_end0-_debug_info_start0
+	.long	_set0
+_debug_info_start0:
+	.short	4
+	.long	.debug_abbrev
+	.byte	4
+	.byte	1
+	.long	_info_string0
+	.short	33
+	.long	_info_string1
+	.long	_line_table_start0
+	.long	_info_string2
+	.long	___COMPILE_UNIT___debug_ranges0
+	.byte	2
+	.long	__start_basic___func_begin0
+	.long	__start_basic___func_end0
+	.byte	1
+	.byte	93
+
+	.long	_info_string3
+	.byte	1
+	.byte	14
+	.long	86
+
+	.byte	3
+	.long	__start_basic___debug_loc1
+	.long	_info_string7
+	.byte	1
+	.byte	14
+	.long	86
+	.byte	3
+	.long	__start_basic___debug_loc0
+	.long	_info_string5
+	.byte	1
+	.byte	14
+	.long	93
+	.byte	0
+	.byte	4
+	.long	_info_string4
+	.byte	5
+	.byte	4
+	.byte	5
+	.long	99
+	.byte	32
+	.byte	5
+	.long	105
+	.byte	32
+	.byte	4
+	.long	_info_string6
+	.byte	6
+	.byte	1
+	.byte	0
+_debug_info_end0:
+	.section	.debug_ranges,"",@progbits
+___COMPILE_UNIT___debug_ranges0:
+.set _set1, __start_basic___func_begin0-__start_basic___func_begin0
+	.long	_set1
+.set _set2, __start_basic___func_end0-__start_basic___func_begin0
+	.long	_set2
+	.long	0
+	.long	0
+	.section	.debug_str,"MS",@progbits,1
+_info_string0:
+	.asciz	"clang version 15.0.5 (sgasip@krachtcs10:ipd/repositories/llvm_ipd f9443cef05a969eedf97c63f3d7c6bc66b93431e)"
+_info_string1:
+	.asciz	"trv32p3_basic.c"
+_info_string2:
+	.asciz	"/home/students/st20/CianOMahoney/trv32p3/lib"
+_info_string3:
+	.asciz	"_start_basic"
+_info_string4:
+	.asciz	"int"
+_info_string5:
+	.asciz	"argv"
+_info_string6:
+	.asciz	"char"
+_info_string7:
+	.asciz	"argc"
+	.section	.debug_line,"",@progbits
+_line_table_start0:
