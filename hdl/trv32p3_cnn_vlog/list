@@ -1,13 +1,9 @@
 /home/students/st20/CianOMahoney/trv32p3_cnn/hdl/trv32p3_cnn_vlog/trv32p3_cnn/controller/controller.v
 /home/students/st20/CianOMahoney/trv32p3_cnn/hdl/trv32p3_cnn_vlog/trv32p3_cnn/controller/hazards.v
-<<<<<<< HEAD
 /home/students/st20/CianOMahoney/trv32p3_cnn/hdl/trv32p3_cnn_vlog/trv32p3_cnn/controller/jtag_scan_register.v
 /home/students/st20/CianOMahoney/trv32p3_cnn/hdl/trv32p3_cnn_vlog/trv32p3_cnn/controller/debug_controller.v
 /home/students/st20/CianOMahoney/trv32p3_cnn/hdl/trv32p3_cnn_vlog/trv32p3_cnn/controller/jtag_interface.v
 /home/students/st20/CianOMahoney/trv32p3_cnn/hdl/trv32p3_cnn_vlog/trv32p3_cnn/controller/jtag_tap_controller.v
-=======
-/home/students/st20/CianOMahoney/trv32p3_cnn/hdl/trv32p3_cnn_vlog/trv32p3_cnn/controller/debug_controller.v
->>>>>>> 4598ee6aea7e54d7c8d2ee3c7f6dc45be2dcb746
 /home/students/st20/CianOMahoney/trv32p3_cnn/hdl/trv32p3_cnn_vlog/trv32p3_cnn/controller/decoder.v
 /home/students/st20/CianOMahoney/trv32p3_cnn/hdl/trv32p3_cnn_vlog/trv32p3_cnn/mux/mux_pm_addr.v
 /home/students/st20/CianOMahoney/trv32p3_cnn/hdl/trv32p3_cnn_vlog/trv32p3_cnn/mux/mux_pm_wr.v
@@ -57,14 +53,7 @@
 /home/students/st20/CianOMahoney/trv32p3_cnn/hdl/trv32p3_cnn_vlog/trv32p3_cnn/prim/cnn.v
 /home/students/st20/CianOMahoney/trv32p3_cnn/hdl/trv32p3_cnn_vlog/trv32p3_cnn/trv32p3_cnn.v
 /home/students/st20/CianOMahoney/trv32p3_cnn/hdl/trv32p3_cnn_vlog/test_bench/clock_gen.v
-<<<<<<< HEAD
 /home/students/st20/CianOMahoney/trv32p3_cnn/hdl/trv32p3_cnn_vlog/test_bench/jtag_emulator.v
-=======
-/home/students/st20/CianOMahoney/trv32p3_cnn/hdl/trv32p3_cnn_vlog/test_bench/jtag_tap_controller.v
-/home/students/st20/CianOMahoney/trv32p3_cnn/hdl/trv32p3_cnn_vlog/test_bench/jtag_emulator.v
-/home/students/st20/CianOMahoney/trv32p3_cnn/hdl/trv32p3_cnn_vlog/test_bench/jtag_scan_register.v
-/home/students/st20/CianOMahoney/trv32p3_cnn/hdl/trv32p3_cnn_vlog/test_bench/jtag_interface.v
->>>>>>> 4598ee6aea7e54d7c8d2ee3c7f6dc45be2dcb746
 /home/students/st20/CianOMahoney/trv32p3_cnn/hdl/trv32p3_cnn_vlog/test_bench/tb_mem_PMb.v
 /home/students/st20/CianOMahoney/trv32p3_cnn/hdl/trv32p3_cnn_vlog/test_bench/tb_mem_eDM.v
 /home/students/st20/CianOMahoney/trv32p3_cnn/hdl/trv32p3_cnn_vlog/test_bench/test_bench.v

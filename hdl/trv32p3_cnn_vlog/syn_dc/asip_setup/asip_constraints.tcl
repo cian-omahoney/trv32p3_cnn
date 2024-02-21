@@ -12,7 +12,6 @@ set clock_port [get_ports $CLK_NAME]
 set reset_port [get_ports $RESET_NAME]
 
 set ALL_INPUTS_EXC_CLK     [remove_from_collection [all_inputs] $clock_port]
-<<<<<<< HEAD
 set ALL_INPUTS_EXC_CLK     [remove_from_collection $ALL_INPUTS_EXC_CLK [get_ports jtag_tck_in]]
 set ALL_INPUTS_EXC_CLK     [remove_from_collection $ALL_INPUTS_EXC_CLK [get_ports jtag_tdi_in]]
 set ALL_INPUTS_EXC_CLK     [remove_from_collection $ALL_INPUTS_EXC_CLK [get_ports jtag_tms_in]]
@@ -20,10 +19,6 @@ set ALL_INPUTS_EXC_CLK     [remove_from_collection $ALL_INPUTS_EXC_CLK [get_port
 set ALL_INPUTS_EXC_CLK_RES [remove_from_collection $ALL_INPUTS_EXC_CLK $reset_port]
 set ALL_OUTPUTS_CLK        [all_outputs]
 set ALL_OUTPUTS_CLK        [remove_from_collection $ALL_OUTPUTS_CLK [get_ports jtag_tdo_out]]
-=======
-set ALL_INPUTS_EXC_CLK_RES [remove_from_collection $ALL_INPUTS_EXC_CLK $reset_port]
-set ALL_OUTPUTS_CLK        [all_outputs]
->>>>>>> 4598ee6aea7e54d7c8d2ee3c7f6dc45be2dcb746
 
 ###################################
 ### create clocks 
@@ -37,14 +32,11 @@ create_clock -name $CLK_NAME -period ${clock_cycle} ${clock_port}
 #set_clock_uncertainty -hold  0.1  [get_clocks $CLK_NAME]
 
 set ocd_clock_cycle [expr 1000.0/${OCD_CLOCK_FREQ}]
-<<<<<<< HEAD
 # JTAG interface specific
 create_clock -name jtag_clk -period ${ocd_clock_cycle} [get_ports jtag_tck_in];
 # set false path between clocks:
 set_false_path -from $CLK_NAME -to jtag_clk
 set_false_path -from jtag_clk  -to $CLK_NAME
-=======
->>>>>>> 4598ee6aea7e54d7c8d2ee3c7f6dc45be2dcb746
 
 # group clk/inputs/outputs for better optimization:
 group_path -name CLK -to $CLK_NAME
@@ -52,20 +44,14 @@ group_path -name INPUT -through [all_inputs]
 group_path -name OUTPUTS -to [all_outputs]
 group_path -name FEEDTHROUGH -from [all_inputs] -to [all_outputs]
 
-<<<<<<< HEAD
 group_path -name JTAG_CLK -to jtag_clk
-=======
->>>>>>> 4598ee6aea7e54d7c8d2ee3c7f6dc45be2dcb746
 
 ###################################
 #### reset input
 ###################################
 # dont buffer reset net
 set_ideal_network $reset_port
-<<<<<<< HEAD
 set_ideal_network [get_ports $JTAG_RESET]
-=======
->>>>>>> 4598ee6aea7e54d7c8d2ee3c7f6dc45be2dcb746
 
 ###################################
 ### default delays for inputs/outputs
@@ -82,14 +68,11 @@ set std_out_delay_reg [expr ${clock_cycle}*0.8]
 set_input_delay  ${std_in_delay}  -clock $CLK_NAME $ALL_INPUTS_EXC_CLK_RES
 set_output_delay ${std_out_delay} -clock $CLK_NAME $ALL_OUTPUTS_CLK
 
-<<<<<<< HEAD
 # JTAG interface specific
 set_input_delay  ${std_in_delay}  -clock jtag_clk [get_ports jtag_tdi_in]
 set_input_delay  ${std_in_delay}  -clock jtag_clk [get_ports jtag_tms_in]
 set_output_delay ${std_out_delay} -clock jtag_clk [get_ports jtag_tdo_out]
 
-=======
->>>>>>> 4598ee6aea7e54d7c8d2ee3c7f6dc45be2dcb746
 ###################################
 ### clamp inputs
 ###################################

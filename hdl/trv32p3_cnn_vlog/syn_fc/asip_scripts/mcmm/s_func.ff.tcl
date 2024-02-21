@@ -19,13 +19,10 @@ set STD_OUT_DELAY   [expr ${CLOCK_CYCLE}/3]
 set_input_delay  -clock [get_clocks ${CLK_NAME}] ${STD_IN_DELAY}  ${ALL_INPUTS_EXC_CLK_RES}
 set_output_delay -clock [get_clocks ${CLK_NAME}] ${STD_OUT_DELAY} ${ALL_OUTPUTS_CLK}
 
-<<<<<<< HEAD
 # JTAG interface specific
 set_input_delay  ${STD_IN_DELAY}  -clock jtag_clk [get_ports $JTAG_INPUT_PORTS_NO_RST]
 set_output_delay ${STD_OUT_DELAY} -clock jtag_clk [get_ports $JTAG_OUTPUT_PORTS]
 
-=======
->>>>>>> 4598ee6aea7e54d7c8d2ee3c7f6dc45be2dcb746
 # set default drive for ALL ports
 set_driving_cell -lib_cell ${STD_DRV_CELL} -pin ${STD_DRV_PIN} ${input_ports}
 

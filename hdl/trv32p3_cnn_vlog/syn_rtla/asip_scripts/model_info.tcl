@@ -18,14 +18,10 @@ set RTL_SOURCE_LANGUAGE		"sverilog" ;# used for ASIPs when RTL_SOURCE_FORMAT = s
 set FILENAMES		"
 trv32p3_cnn/controller/controller.v
 trv32p3_cnn/controller/hazards.v
-<<<<<<< HEAD
 trv32p3_cnn/controller/jtag_scan_register.v
 trv32p3_cnn/controller/debug_controller.v
 trv32p3_cnn/controller/jtag_interface.v
 trv32p3_cnn/controller/jtag_tap_controller.v
-=======
-trv32p3_cnn/controller/debug_controller.v
->>>>>>> 4598ee6aea7e54d7c8d2ee3c7f6dc45be2dcb746
 trv32p3_cnn/controller/decoder.v
 trv32p3_cnn/mux/mux_pm_addr.v
 trv32p3_cnn/mux/mux_pm_wr.v
@@ -81,11 +77,8 @@ set OCD_CLOCK_FREQ [env_get? OCD_CLOCK_FREQ 10]; # MHz
 set CLK_NAME               "clock"
 set RESET_NAME             "reset_ext"
 
-<<<<<<< HEAD
 set JTAG_CLK_NAME "jtag_tck_in"
 set JTAG_RESET "jtag_trst"
 set JTAG_INPUT_PORTS_NO_RST {jtag_tdi_in jtag_tms_in}
 set JTAG_OUTPUT_PORTS jtag_tdo_out
 
-=======
->>>>>>> 4598ee6aea7e54d7c8d2ee3c7f6dc45be2dcb746

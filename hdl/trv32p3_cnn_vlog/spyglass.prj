@@ -46,14 +46,10 @@ if { [info exists env(SYNOPSYS)] } {
 
 read_file -type ${spy_lang} trv32p3_cnn/controller/controller.v
 read_file -type ${spy_lang} trv32p3_cnn/controller/hazards.v
-<<<<<<< HEAD
 read_file -type ${spy_lang} trv32p3_cnn/controller/jtag_scan_register.v
 read_file -type ${spy_lang} trv32p3_cnn/controller/debug_controller.v
 read_file -type ${spy_lang} trv32p3_cnn/controller/jtag_interface.v
 read_file -type ${spy_lang} trv32p3_cnn/controller/jtag_tap_controller.v
-=======
-read_file -type ${spy_lang} trv32p3_cnn/controller/debug_controller.v
->>>>>>> 4598ee6aea7e54d7c8d2ee3c7f6dc45be2dcb746
 read_file -type ${spy_lang} trv32p3_cnn/controller/decoder.v
 read_file -type ${spy_lang} trv32p3_cnn/mux/mux_pm_addr.v
 read_file -type ${spy_lang} trv32p3_cnn/mux/mux_pm_wr.v
