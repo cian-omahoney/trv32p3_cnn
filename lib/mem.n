@@ -19,7 +19,7 @@
 // ~~~ Program Memory (Address Space)
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-def pm_size = 2**32;
+def pm_size = 2**MEM_ePM_SZ_NBIT;
 
 mem PMb [pm_size] <u08,addr> access {};
 
@@ -38,7 +38,7 @@ properties {
 // ~~~ Data Memory (Address Space)
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-def dm_size = 2**32;
+def dm_size = 2**MEM_eDM_SZ_NBIT;
 
 mem DMb [dm_size,1] <w08,addr> access {
   dmb_ld`0` : dmb_rd`1`          = DMb[dm_addr`0`]`1`;

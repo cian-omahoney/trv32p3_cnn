@@ -58,7 +58,7 @@ io_interface dm_merge (DMb) {
 
   trn wdm_st <uint4_t>; // byte write mask
 
-  mem wDM [2**30] <v4u8,addr> access {
+  mem wDM [2**(MEM_eDM_SZ_NBIT-2)] <v4u8,addr> access {
     wdm_ld`0`: wdm_rd`1`           = wDM[wdm_addr`0`]`1`;
     wdm_st`0`: wDM[wdm_addr`0`]`1` = wdm_wr`1`;
   };
@@ -174,7 +174,7 @@ io_interface dm_wbb (wDM) {
 
   trn edm_st<uint4_t>; // byte write mask
 
-  mem eDM [2**30] <v4u8,addr> access {
+  mem eDM [2**(MEM_eDM_SZ_NBIT-2)] <v4u8,addr> access {
     edm_ld`0`: edm_rd`1`           = eDM[edm_addr`0`]`0`;
     edm_st`0`: eDM[edm_addr`0`]`0` = edm_wr`0`;
   };
