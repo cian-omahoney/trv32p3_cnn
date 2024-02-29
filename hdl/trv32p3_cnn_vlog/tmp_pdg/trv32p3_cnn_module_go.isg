@@ -19,7 +19,7 @@ prim typ uint4_t_as_vect<4u>[0,15,1]v (uint1_t, 4);
 trn wdm_st<uint4_t_as_vect>;
 trn wdm_wr<v4u8>;
 
-mem wDM[0..2047,1]<v4u8, addr> access {
+mem wDM[0..1073741823,1]<v4u8, addr> access {
   wdm_ld: wdm_rd `1` = wDM[wdm_addr] `1`;
   wdm_st: wDM[wdm_addr] `1` = wdm_wr `1`;
 };
@@ -32,7 +32,7 @@ trn edm_rd<v4u8>;
 trn edm_st<uint4_t_as_vect>;
 trn edm_wr<v4u8>;
 
-mem eDM[0..2047,1]<v4u8, addr> access {
+mem eDM[0..1073741823,1]<v4u8, addr> access {
   edm_ld: edm_rd `1` = eDM[edm_addr];
   edm_st: eDM[edm_addr] = edm_wr;
 };

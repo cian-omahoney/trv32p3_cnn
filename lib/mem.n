@@ -64,7 +64,7 @@ mem DMw [dm_size,4] <w32,addr> alias DMb access {
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // ~~~ Directly Addressable Memory Range (for Chess)
 
-def dm_stat = 2**11;
+def dm_stat = 2**4;
 
 mem DMb_stat [dm_stat,1] <w08,addr> alias DMb[0] access {};
 mem DMh_stat [dm_stat,2] <w16,addr> alias DMb_stat access {};

@@ -27,9 +27,9 @@ _reserved DMb 0 4
 // small_static_memory: exclusive for static scalar objects
 // objects in this range can be accessed directly via the signed 12b immediate
 // of the load/store instructions
-_exclusive DMb_stat 4 .. 0x7ff
+_exclusive DMb_stat 4 .. 15
 
-_stack DMb 0x1000 0x01000
+_stack DMb 16 .. 255
 
 _symbol __dso_handle 0            // Static linking
 _extern __dso_handle
