@@ -30,7 +30,7 @@
         <editor id="editor0" file="trv32p3_cnn.n" top="49.0" cursor="60.14" foldmap="1" linemap="0"/>
         <editor id="editor1" file="opc.n" top="51.0" cursor="62.0" foldmap="1" linemap="0"/>
         <editor id="editor2" file="userext.n" top="57.0" cursor="47.15" foldmap="1" linemap="0"/>
-        <editor id="editor3" file="cnn.n" top="57.0" cursor="71.15" foldmap="1" linemap="0"/>
+        <editor id="editor3" file="cnn.n" top="13.0" cursor="44.0" foldmap="1" linemap="0"/>
         <editor id="editor4" file="alu.n" top="65.0" cursor="74.13" foldmap="1" linemap="0"/>
         <editor id="editor5" file="trv32p3_cnn.p" top="17.0" cursor="26.39" foldmap="1" linemap="0"/>
         <editor id="editor6" file="trv32p3_cnn.h" top="1.0" cursor="85.2" foldmap="1" linemap="0"/>

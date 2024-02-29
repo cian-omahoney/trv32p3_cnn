@@ -145,6 +145,7 @@ div__Q_addr_reg#Q_addr_reg
 }
 </reglayout>
     <simulation name="Simulator generation" mode="top">
+        <option id="checkers.PDGDebug" value="on"/>
         <option id="checkers.UsePCU" value="on"/>
         <option id="checkers.UsePDG" value="on"/>
         <option id="checkers.xargs" inherit="1">DefaultDMem=DMb
