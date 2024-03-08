@@ -16,8 +16,8 @@
 // Size = number of words
 //  * ePM: 32 bits per word
 //  * eDM: 32 bits per word
-#define MEM_ePM_SZ_NBIT 12
-#define MEM_eDM_SZ_NBIT 12
+#define MEM_ePM_SZ_NBIT 14
+#define MEM_eDM_SZ_NBIT 15
 
 // Note: this header file is included almost everywhere, e.g. in the processing
 // of nML, PDG, C/C++, BCF, ... files. Be careful which preprocessor macros
