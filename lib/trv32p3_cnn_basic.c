@@ -8,7 +8,7 @@
 -- strictly prohibited.
 */
 
-int main(int argc, char** argv);
+int main(int, char**);
 
 extern "C" // for easier referencing in .bcf file
 int _start_basic(int argc, char** argv) {
