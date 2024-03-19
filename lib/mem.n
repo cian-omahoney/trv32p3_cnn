@@ -52,7 +52,6 @@ mem DMh [dm_size,2] <w16,addr> alias DMb access {
 
 mem DMw [dm_size,4] <w32,addr> alias DMb access {
   dmw_ld`0` : dmw_rd`1`          = DMw[dm_addr`0`]`1`;
-   dmw_ld2`0` : dmw_rd2`1`          = DMw[dm_addr2`0`]`1`;
   dmw_st`0` : DMw[dm_addr`0`]`1` = dmw_wr`1`;
 };
 
