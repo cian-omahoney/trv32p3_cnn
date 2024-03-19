@@ -14,14 +14,14 @@ trn cnn_R<w32>;
 
 opn cnn_instrs (
     cnn_rrra_instr |
-    cnn_rr_instr |
-    cnn_parr_instr
+    cnn_rr_instr
+   // cnn_parr_instr
 );
 
 enum cnn_op {
   mac  = 0b1100000001,
   exp  = 0b1100000011,
-  par  = 0b1100000111,
+  //par  = 0b1100000111,
   TEN = 0b1111111111
 };
 
@@ -61,7 +61,7 @@ opn cnn_rr_instr(op: cnn_op, rd: eX, mrd: mX1w_EX, mrs1: mX1r_EX)
     image  : op[9..3] :: "00000" :: mrs1 :: op[2..0] :: rd :: mrd<alias rd> :: opc32.OP
     class(cnn_rr);
 }
-
+/*
 reg X10<w32> alias X[10] read(x_r1 x_r2 x_r3 x_r4 x_r5 x_r6 x_r7) write(x_w1 x_w2 x_w3 x_w4 x_w5 x_w6 x_w7);
 reg X11<w32> alias X[11] read(x_r1 x_r2 x_r3 x_r4 x_r5 x_r6 x_r7) write(x_w1 x_w2 x_w3 x_w4 x_w5 x_w6 x_w7);
 reg X12<w32> alias X[12] read(x_r1 x_r2 x_r3 x_r4 x_r5 x_r6 x_r7) write(x_w1 x_w2 x_w3 x_w4 x_w5 x_w6 x_w7);
@@ -138,4 +138,4 @@ opn cnn_parr_instr(mac: cnn_rrra_fixed,
     action { mac; ld10; ld11;}
     syntax : mac " | " ld10 " | " ld11;
     image  : "1100000" :: "00000" :: "00000" :: "111" :: "00000" :: opc32.OP;
-}
+}*/
