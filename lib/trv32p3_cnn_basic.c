@@ -8,11 +8,11 @@
 -- strictly prohibited.
 */
 
-int main(int, char**);
+int main();
 
 extern "C" // for easier referencing in .bcf file
-int _start_basic(int argc, char** argv) {
-  chess_exit(main(argc,argv));  // run program and stop simulation
+int _start_basic() {
+  chess_exit(main());  // run program and stop simulation
   while (1);                    // don't continue
   return 0;                     // (unreachable, but needed by noodle)
 }

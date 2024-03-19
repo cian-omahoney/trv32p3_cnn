@@ -29,4 +29,4 @@
 ; area to load main(argc,char* argv[]) arguments
 ; Only for ISS simulation, ISS loads argc/argv into memory and initializes
 ; argument registers (argc, argv)
-.bss global 0 _main_argv_area DMb 256
+//.bss global 0 _main_argv_area DMb 256

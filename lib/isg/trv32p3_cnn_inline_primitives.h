@@ -40,6 +40,11 @@ namespace trv32p3_cnn_primitive {
     const int dm_merge_module_id = 2;
     const int dm_wbb_module_id = 3;
 
+    inline const trv32p3_cnn_primitive::v22w32 getexpRes() {
+        static const unsigned long long a[] = { 12884901889ull, 85899345927ull, 635655159863ull, 4711579124115ull, 34802120002469ull, 257156871902730ull, 1900149366488003ull, 14040321106270636ull, 103744733180303199ull, 766575645775488065ull, 5664270447465400459ull };
+        return VBitVector<trv32p3_cnn_primitive::w32, 22>(a);
+    }
+
     inline trv32p3_cnn_primitive::w32 add(trv32p3_cnn_primitive::w32 a, trv32p3_cnn_primitive::w32 b) {
         return (a.val + b.val);
     }
@@ -218,6 +223,17 @@ namespace trv32p3_cnn_primitive {
         multResult = INT32_SATURATION((a.val * b.val)).val;
         result = INT32_SATURATION(VBit<64, true>((c.val + multResult))).val;
         return result;
+    }
+
+    inline trv32p3_cnn_primitive::w32 exp(trv32p3_cnn_primitive::w32 a) {
+        VBit<32, true> result{VBitZeroInitializeTag{}};
+        if ((a.val < VBit<32, true>(0x0))) {
+            return VBit<32, true>(0x0);
+        } else if ((a.val > VBit<32, true>(0x15))) {
+            return VBit<32, true>(0x7FFFFFFF);
+        } else {
+            return getexpRes().elem((a).val.to_signed());
+        }
     }
 
 #ifdef __checkers__

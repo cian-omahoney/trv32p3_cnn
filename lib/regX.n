@@ -40,10 +40,10 @@ enum eX {
 
 reg X[32] <w32,t5u> syntax ("x")
     read (
-      x_r1 x_r2 x_r3
+      x_r1 x_r2 x_r3 x_r4 x_r5 x_r6 x_r7
     )
     write (
-      x_w1 x_w2
+      x_w1 x_w2 x_w3 x_w4 x_w5 x_w6 x_w7
     );
 hw_init X = others => 0;
 
@@ -57,6 +57,8 @@ property dead_end: x_w1_dead;
 
 // 'Dead' register field X[0], hard-wired to 0
 reg zero <w32> alias X[0] read() write();
+
+
 
 // Link register
 reg LR   <w32> alias X[1] read() write();

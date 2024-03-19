@@ -371,3 +371,31 @@ task w32_mac_w32_w32_w32
     result_0 = result;
   end
 endtask
+
+task w32_exp_w32
+  ( output reg signed [31:0] result_0,
+    input      signed [31:0] a
+  );
+  begin : w32_exp_w32_task
+    reg signed [31:0] result;
+    reg signed [703:0] LL;
+    reg signed [31:0] rtrn;
+    if (a < 32'sh0)
+    begin
+      result_0 = 32'sh0;
+    end
+    else
+    begin
+      if (a > 32'sh15)
+      begin
+        result_0 = 32'sh7FFFFFFF;
+      end
+      else
+      begin
+        LL = 704'sh4E9B87F61CEB088B0AA36C7D03E9E441017093490087975F0031E199001259AC0006C02D00027BC30000E9E20000560A00001FA700000BA50000044900000193000000940000003700000014000000070000000300000001;
+        rtrn = $signed(LL[{a, 5'h0}+:32]);
+        result_0 = rtrn;
+      end
+    end
+  end
+endtask

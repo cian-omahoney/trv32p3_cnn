@@ -8,4 +8,7 @@ certitude/
 benchmarks/
 regression/
 debug_client/
+lib/Release
+lib/Debug
+lib/softfloat
 

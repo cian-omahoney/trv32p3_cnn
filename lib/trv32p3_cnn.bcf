@@ -29,12 +29,14 @@ _reserved DMb 0 4
 // of the load/store instructions
 _exclusive DMb_stat 4 .. 15
 
-_stack DMb 16 .. 1023
+//_stack DMb 16 .. 1023
+_stack DMb 30720 .. 32767
+
 
 _symbol __dso_handle 0            // Static linking
 _extern __dso_handle
 
-_always_include _main_argv_area   // Reserve space for main() arguments
+//_always_include _main_argv_area   // Reserve space for main() arguments
 
 _symbol_sort mem_size ascending // first map the symbols allocated to the
                                 // smaller memory range aliases

@@ -4,6 +4,8 @@
             <configuration name="Release"/>
             <configuration name="Debug"/>
             <configuration name="Native"/>
+            <option id="backend.mist2.banknops" value="exit" cfg="Debug"/>
+            <option id="backend.rover.optim" value="on" cfg="Debug"/>
             <option id="bridge.libpath" value="&lt;PROCDIR&gt;/runtime/&lt;PCONFIG&gt; &lt;PROCDIR&gt;/softfloat/&lt;PCONFIG&gt;" inherit="1" cfg="Debug"/>
             <option id="bridge.libpath" value="&lt;PROCDIR&gt;/runtime/&lt;PCONFIG&gt; &lt;PROCDIR&gt;/compiler-rt/&lt;PCONFIG&gt; &lt;PROCDIR&gt;/libcxx-lite/&lt;PCONFIG&gt;" inherit="1" cfg="Debug_LLVM"/>
             <option id="bridge.libpath" value="&lt;PROCDIR&gt;/&lt;CONFIG&gt;" inherit="0" cfg="Native"/>
@@ -33,6 +35,12 @@
             <option id="llvm.clang" value="on" cfg="Release_LLVM_full"/>
             <option id="native.native" value="on" cfg="Native"/>
             <option id="noodle.alwinc" value="trv32p3_cnn_native.h" inherit="0" cfg="Native"/>
+            <option id="noodle.optim.nolsw" value="off" cfg="Debug"/>
+            <option id="noodle.verbose.vdo" value="off" cfg="Debug"/>
+            <option id="noodle.verbose.vind" value="off" cfg="Debug"/>
+            <option id="noodle.verbose.vinl" value="off" cfg="Debug"/>
+            <option id="noodle.verbose.vlbb" value="off" cfg="Debug"/>
+            <option id="noodle.verbose.vrew" value="off" cfg="Debug"/>
         </configurations>
         <level name="Level 0" lvl="0">
             <option id="backend.mist2.debug" value="on"/>
@@ -100,6 +108,7 @@
         <option id="simrun.issia" value="&lt;PROCDIR&gt;/../iss/trv32p3_cnn_ia &lt;PROCDIR&gt;/../iss/trv32p3_cnn_ia-jit &lt;PROCDIR&gt;/../iss/trv32p3_cnn_ia-blockjit" inherit="1"/>
         <option id="simrun.loadpc" value="off"/>
         <option id="simrun.loadsp" value="off"/>
+        <option id="simrun.pmcheck" value="data" cfg="default"/>
         <option id="simrun.simscript" value="&lt;PROCDIR&gt;/../bin/iss/driver.tcl" cfg="rcd"/>
     </execution>
     <hdlgeneration name="HDL generation">
