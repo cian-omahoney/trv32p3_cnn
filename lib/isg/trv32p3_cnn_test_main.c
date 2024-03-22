@@ -695,6 +695,15 @@ void test_w32_exp_w32(std::istream& is) {
     trv32p3_cnn_primitive::w32 result = exp(t0);
     if (result != result_expected) { failure(result_expected, result); return; }
 }
+
+void test_w32_prelu_w32(std::istream& is) {
+    trv32p3_cnn_primitive::w32 result_expected;
+    trv32p3_cnn_primitive::w32 t0;
+    read_from_stream(is, t0);
+    read_from_stream(is, result_expected);
+    trv32p3_cnn_primitive::w32 result = prelu(t0);
+    if (result != result_expected) { failure(result_expected, result); return; }
+}
 typedef std::map<std::string, void(*)(std::istream&)> TestDrivers;
 void register_drivers0(TestDrivers& test_drivers) {
     test_drivers["w32_add_w32_w32"] = test_w32_add_w32_w32;
@@ -731,6 +740,7 @@ void register_drivers0(TestDrivers& test_drivers) {
     test_drivers["w32_remu_w32_w32"] = test_w32_remu_w32_w32;
     test_drivers["w32_mac_w32_w32_w32"] = test_w32_mac_w32_w32_w32;
     test_drivers["w32_exp_w32"] = test_w32_exp_w32;
+    test_drivers["w32_prelu_w32"] = test_w32_prelu_w32;
 }
 int main() {
     std::set<std::string> unknown_primitives;

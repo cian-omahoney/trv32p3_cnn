@@ -11,7 +11,7 @@ namespace trv32p3_cnn_primitive {
   // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   w32 mac(w32, w32, w32);
   w32 exp(w32);
- // w32 prelu(w32);
+  w32 prelu(w32);
 
   // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   // ~~~ Definition of Conversions Between Primitive Data Types

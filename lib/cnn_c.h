@@ -17,9 +17,9 @@ namespace trv32p3_cnn_primitive {
    return exp(a);
   }
   
-  //inline w32 irelu(w32 a) {
-  //  return prelu(a);
- // }
+  inline w32 irelu(w32 a) {
+    return prelu(a);
+  }
 
 }
 
@@ -29,7 +29,8 @@ namespace trv32p3_cnn_primitive {
 
 promotion int MyMAC(int, int, int) = w32 imac(w32,w32,w32);
 promotion int exp(int) = w32 iexp(w32);
-//promotion int ReLU(int) = w32 irelu(w32);
+promotion int ReLU(int) = w32 irelu(w32);
+
 // Promote to processor primitives
 //promotion int c_user1 (int,int) = w32 p_user1 (w32,32);
 

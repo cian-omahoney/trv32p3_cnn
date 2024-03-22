@@ -236,6 +236,16 @@ namespace trv32p3_cnn_primitive {
         }
     }
 
+    inline trv32p3_cnn_primitive::w32 prelu(trv32p3_cnn_primitive::w32 a) {
+        VBit<32, true> t{VBitZeroInitializeTag{}};
+        if ((a.val > VBit<32, true>(0x0))) {
+            t = a.val;
+        } else {
+            t = VBit<32, true>(0x0);
+        }
+        return t;
+    }
+
 #ifdef __checkers__
     class div {
     public:

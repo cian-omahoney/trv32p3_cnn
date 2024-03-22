@@ -399,3 +399,21 @@ task w32_exp_w32
     end
   end
 endtask
+
+task w32_prelu_w32
+  ( output reg signed [31:0] result,
+    input      signed [31:0] a
+  );
+  begin : w32_prelu_w32_task
+    reg signed [31:0] t;
+    if (a > 32'sh0)
+    begin
+      t = a;
+    end
+    else
+    begin
+      t = 32'sh0;
+    end
+    result = t;
+  end
+endtask

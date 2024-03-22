@@ -42,7 +42,6 @@ w32 exp(w32 a)  {
   }
 }
 
-/*
 w32 prelu(w32 a)  {
   return (a > 0)? a : 0;
-}*/
+}

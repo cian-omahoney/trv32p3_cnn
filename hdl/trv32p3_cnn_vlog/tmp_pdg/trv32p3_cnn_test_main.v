@@ -513,6 +513,21 @@ module test_driver;
     end
   endtask
 
+  task test_w32_prelu_w32;
+    begin : test_w32_prelu_w32_task
+      reg signed [31:0] __pdg__return_sig_expected;
+      reg signed [31:0] __pdg__return_sig_found;
+      reg signed [31:0] a;
+      r = $sscanf(line, "%s %h %h ", command, a, __pdg__return_sig_expected);
+      w32_prelu_w32(__pdg__return_sig_found, a);
+      if (__pdg__return_sig_expected !== __pdg__return_sig_found)
+      begin
+        $display("FAILURE: %s %h %h , expected %h, found %h", "w32_prelu_w32", a, __pdg__return_sig_expected, __pdg__return_sig_expected, __pdg__return_sig_found);
+        $fdisplay(out_file, "%s %h %h // expected %h, found %h", "w32_prelu_w32", a, __pdg__return_sig_expected, __pdg__return_sig_expected, __pdg__return_sig_found);
+      end
+    end
+  endtask
+
   initial
   begin : file_block
     file = $fopen("trv32p3_cnn_testcases.txt", "r");
@@ -586,6 +601,8 @@ module test_driver;
           test_w32_mac_w32_w32_w32();
         "w32_exp_w32":
           test_w32_exp_w32();
+        "w32_prelu_w32":
+          test_w32_prelu_w32();
       endcase
     end
     $fclose(file);
