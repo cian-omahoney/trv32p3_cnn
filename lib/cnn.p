@@ -28,7 +28,7 @@ w32 mac(w32 c, w32 a, w32 b)  {
   
   return result;
 }
-/*
+
 w32 exp(w32 a)  {
   int32_t result;
   if(a < 0){
@@ -42,7 +42,7 @@ w32 exp(w32 a)  {
   }
 }
 
-
+/*
 w32 prelu(w32 a)  {
   return (a > 0)? a : 0;
 }*/

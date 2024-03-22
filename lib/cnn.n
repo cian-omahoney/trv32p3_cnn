@@ -13,14 +13,14 @@ trn cnn_R<w32>;
 
 
 opn cnn_instrs (
-    cnn_rrra_instr //|
-   // cnn_rr_instr
+    cnn_rrra_instr |
+    cnn_rr_instr
    // cnn_parr_instr
 );
 
 enum cnn_op {
   mac  = 0b1100000001,
- // exp  = 0b1100000011,
+  exp  = 0b1100000011,
  // relu = 0b1100001111,
   //par  = 0b1100000111,
   TEN = 0b1111111111
@@ -46,7 +46,7 @@ opn cnn_rrra_instr(op: cnn_op, rd: eX, mrd: mX3rw, mrs1: mX1rw, mrs2: mX2rw)
     image  : op[9..3] :: mrs2 :: mrs1 :: op[2..0] :: rd :: mrd<alias rd> :: opc32.OP
     class(cnn_rrra);
 }
-/*
+
 opn cnn_rr_instr(op: cnn_op, rd: eX, mrd: mX1w_EX, mrs1: mX1r_EX)
 {
     action {
@@ -54,7 +54,7 @@ opn cnn_rr_instr(op: cnn_op, rd: eX, mrd: mX1w_EX, mrs1: mX1r_EX)
     stage EX:
               switch (op) {
               case exp  :  cnn_w1 = cnn_R = exp(xuA=cnn_r1) @cnn;
-              case relu :  cnn_w1 = cnn_R = prelu(xuA=cnn_r1) @cnn;
+              //case relu :  cnn_w1 = cnn_R = prelu(xuA=cnn_r1) @cnn;
               }
               if (rd: x0)         x_w1_dead = cnn_w1;
               else                mrd = cnn_w1;

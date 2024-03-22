@@ -225,6 +225,17 @@ namespace trv32p3_cnn_primitive {
         return result;
     }
 
+    inline trv32p3_cnn_primitive::w32 exp(trv32p3_cnn_primitive::w32 a) {
+        VBit<32, true> result{VBitZeroInitializeTag{}};
+        if ((a.val < VBit<32, true>(0x0))) {
+            return VBit<32, true>(0x0);
+        } else if ((a.val > VBit<32, true>(0x15))) {
+            return VBit<32, true>(0x7FFFFFFF);
+        } else {
+            return getexpRes().elem((a).val.to_signed());
+        }
+    }
+
 #ifdef __checkers__
     class div {
     public:
