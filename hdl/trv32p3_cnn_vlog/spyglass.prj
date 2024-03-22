@@ -56,6 +56,7 @@ read_file -type ${spy_lang} trv32p3_cnn/mux/mux_pm_wr.v
 read_file -type ${spy_lang} trv32p3_cnn/mux/mux_dm_addr.v
 read_file -type ${spy_lang} trv32p3_cnn/mux/mux_dmb_wr.v
 read_file -type ${spy_lang} trv32p3_cnn/mux/mux_x_w1.v
+read_file -type ${spy_lang} trv32p3_cnn/mux/mux_x_w1_dead.v
 read_file -type ${spy_lang} trv32p3_cnn/mux/mux_ocd_data_w.v
 read_file -type ${spy_lang} trv32p3_cnn/mux/mux_ocd_instr_w.v
 read_file -type ${spy_lang} trv32p3_cnn/mux/mux_aluA.v
@@ -95,6 +96,7 @@ read_file -type ${spy_lang} trv32p3_cnn/prim/lx.v
 read_file -type ${spy_lang} trv32p3_cnn/prim/agu.v
 read_file -type ${spy_lang} trv32p3_cnn/prim/mpy.v
 read_file -type ${spy_lang} trv32p3_cnn/prim/ocd_addr_incr.v
+read_file -type ${spy_lang} trv32p3_cnn/prim/cnn.v
 read_file -type ${spy_lang} trv32p3_cnn/trv32p3_cnn.v
 
 if { ![info exists asip_already_run] } {

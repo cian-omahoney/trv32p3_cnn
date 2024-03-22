@@ -10,6 +10,7 @@
 /home/students/st20/CianOMahoney/trv32p3_cnn/hdl/trv32p3_cnn_vlog/trv32p3_cnn/mux/mux_dm_addr.v
 /home/students/st20/CianOMahoney/trv32p3_cnn/hdl/trv32p3_cnn_vlog/trv32p3_cnn/mux/mux_dmb_wr.v
 /home/students/st20/CianOMahoney/trv32p3_cnn/hdl/trv32p3_cnn_vlog/trv32p3_cnn/mux/mux_x_w1.v
+/home/students/st20/CianOMahoney/trv32p3_cnn/hdl/trv32p3_cnn_vlog/trv32p3_cnn/mux/mux_x_w1_dead.v
 /home/students/st20/CianOMahoney/trv32p3_cnn/hdl/trv32p3_cnn_vlog/trv32p3_cnn/mux/mux_ocd_data_w.v
 /home/students/st20/CianOMahoney/trv32p3_cnn/hdl/trv32p3_cnn_vlog/trv32p3_cnn/mux/mux_ocd_instr_w.v
 /home/students/st20/CianOMahoney/trv32p3_cnn/hdl/trv32p3_cnn_vlog/trv32p3_cnn/mux/mux_aluA.v
@@ -49,6 +50,7 @@
 /home/students/st20/CianOMahoney/trv32p3_cnn/hdl/trv32p3_cnn_vlog/trv32p3_cnn/prim/agu.v
 /home/students/st20/CianOMahoney/trv32p3_cnn/hdl/trv32p3_cnn_vlog/trv32p3_cnn/prim/mpy.v
 /home/students/st20/CianOMahoney/trv32p3_cnn/hdl/trv32p3_cnn_vlog/trv32p3_cnn/prim/ocd_addr_incr.v
+/home/students/st20/CianOMahoney/trv32p3_cnn/hdl/trv32p3_cnn_vlog/trv32p3_cnn/prim/cnn.v
 /home/students/st20/CianOMahoney/trv32p3_cnn/hdl/trv32p3_cnn_vlog/trv32p3_cnn/trv32p3_cnn.v
 /home/students/st20/CianOMahoney/trv32p3_cnn/hdl/trv32p3_cnn_vlog/test_bench/clock_gen.v
 /home/students/st20/CianOMahoney/trv32p3_cnn/hdl/trv32p3_cnn_vlog/test_bench/jtag_emulator.v

@@ -481,6 +481,23 @@ module test_driver;
     end
   endtask
 
+  task test_w32_mac_w32_w32_w32;
+    begin : test_w32_mac_w32_w32_w32_task
+      reg signed [31:0] __pdg__return_sig_expected;
+      reg signed [31:0] __pdg__return_sig_found;
+      reg signed [31:0] c;
+      reg signed [31:0] a;
+      reg signed [31:0] b;
+      r = $sscanf(line, "%s %h %h %h %h ", command, c, a, b, __pdg__return_sig_expected);
+      w32_mac_w32_w32_w32(__pdg__return_sig_found, c, a, b);
+      if (__pdg__return_sig_expected !== __pdg__return_sig_found)
+      begin
+        $display("FAILURE: %s %h %h %h %h , expected %h, found %h", "w32_mac_w32_w32_w32", c, a, b, __pdg__return_sig_expected, __pdg__return_sig_expected, __pdg__return_sig_found);
+        $fdisplay(out_file, "%s %h %h %h %h // expected %h, found %h", "w32_mac_w32_w32_w32", c, a, b, __pdg__return_sig_expected, __pdg__return_sig_expected, __pdg__return_sig_found);
+      end
+    end
+  endtask
+
   initial
   begin : file_block
     file = $fopen("trv32p3_cnn_testcases.txt", "r");
@@ -550,6 +567,8 @@ module test_driver;
           test_addr_incr4_addr();
         "void_mul_hw_w32_w32_t2u_w32_w32":
           test_void_mul_hw_w32_w32_t2u_w32_w32();
+        "w32_mac_w32_w32_w32":
+          test_w32_mac_w32_w32_w32();
       endcase
     end
     $fclose(file);

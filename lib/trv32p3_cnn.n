@@ -63,7 +63,7 @@ opn i32fmt (
   | ldst_instrs
   | ctrl_instrs
   | swbrk_instr
- // | cnn_instrs
+  | cnn_instrs
 );
 
 // assembly syntax padding

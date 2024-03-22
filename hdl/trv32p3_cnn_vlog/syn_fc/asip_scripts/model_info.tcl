@@ -28,6 +28,7 @@ trv32p3_cnn/mux/mux_pm_wr.v
 trv32p3_cnn/mux/mux_dm_addr.v
 trv32p3_cnn/mux/mux_dmb_wr.v
 trv32p3_cnn/mux/mux_x_w1.v
+trv32p3_cnn/mux/mux_x_w1_dead.v
 trv32p3_cnn/mux/mux_ocd_data_w.v
 trv32p3_cnn/mux/mux_ocd_instr_w.v
 trv32p3_cnn/mux/mux_aluA.v
@@ -67,6 +68,7 @@ trv32p3_cnn/prim/lx.v
 trv32p3_cnn/prim/agu.v
 trv32p3_cnn/prim/mpy.v
 trv32p3_cnn/prim/ocd_addr_incr.v
+trv32p3_cnn/prim/cnn.v
 trv32p3_cnn/trv32p3_cnn.v
 "
 
