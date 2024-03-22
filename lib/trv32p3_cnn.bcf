@@ -42,5 +42,5 @@ _symbol_sort mem_size ascending // first map the symbols allocated to the
                                 // smaller memory range aliases
 
 // Sizes of internal memories in bytes (DMb and PMb are byte memories)
-_mem_size PMb = (2**(MEM_ePM_SZ_NBIT)) * 4
-_mem_size DMb = (2**(MEM_eDM_SZ_NBIT)) * 4
+_mem_size PMb = 16384//(2**(MEM_ePM_SZ_NBIT)) * 4
+_mem_size DMb = 32768//(2**(MEM_eDM_SZ_NBIT)) * 4

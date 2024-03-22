@@ -7,9 +7,13 @@
                         <window name="ProjectView" visible="1" select="1"/>
                     </ViewBookNode>
                     <EditorBookNode size="3">
-                        <window name="editor0" visible="1" select="1"/>
+                        <window name="editor0" visible="1" select="0"/>
                         <window name="editor1" visible="1" select="0"/>
                         <window name="editor2" visible="1" select="0"/>
+                        <window name="editor3" visible="1" select="0"/>
+                        <window name="editor4" visible="1" select="0"/>
+                        <window name="editor5" visible="1" select="0"/>
+                        <window name="editor6" visible="1" select="1"/>
                     </EditorBookNode>
                 </HorPaneNode>
                 <ViewBookNode size="1">
@@ -20,5 +24,9 @@
         <editor id="editor0" file="trv32p3_cnn_define.h" top="1.0" cursor="20.26" foldmap="1" linemap="0"/>
         <editor id="editor1" file="mem.n" top="45.0" cursor="22.32" foldmap="1" linemap="0"/>
         <editor id="editor2" file="trv32p3_cnn.bcf" top="14.0" cursor="25.17" foldmap="1" linemap="0"/>
+        <editor id="editor3" file="cnn_p.h" top="1.0" cursor="12.3" foldmap="1" linemap="0"/>
+        <editor id="editor4" file="cnn.p" top="19.0" cursor="48.3" foldmap="1" linemap="0"/>
+        <editor id="editor5" file="cnn.n" top="115.0" cursor="144.0" foldmap="1" linemap="0"/>
+        <editor id="editor6" file="trv32p3_cnn_c_rewrite.h" top="90.0" cursor="1.0" foldmap="1" linemap="0"/>
     </zlayout>
 </prxusersettings>

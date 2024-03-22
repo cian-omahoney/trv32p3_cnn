@@ -109,7 +109,10 @@ chess_rewrite   signed int divide_by_ct(  signed int x, const   signed int d) ch
 
 chess_rewrite unsigned int divide_by_ct(unsigned int x, const unsigned int d) chess_const(d) { return x / d; } -> { return udiv_by_ct1(x,d); }
 
-chess_rewrite int mac_rule(int c, int a, int b) { return c + (a*b); } -> {return MyMAC(c,a,b);}
+//chess_rewrite int relu_rule(int a) { return ((a > 0)? a : 0); } -> {return ReLU(a);}
+
+//chess_rewrite int mac_rule(int c, int a, int b) { return c + (a*b); } -> {return MyMAC(c,a,b);}
+
 
 //chess_rewrite int mac_parr_rule(int c, int a, int b) { int tempA = a; int tempB = b; return c + (tempA*tempB); } -> {return MyMAC(c,a,b);}
 
