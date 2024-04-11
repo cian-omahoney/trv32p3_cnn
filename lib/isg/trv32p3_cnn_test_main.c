@@ -704,6 +704,31 @@ void test_w32_prelu_w32(std::istream& is) {
     trv32p3_cnn_primitive::w32 result = prelu(t0);
     if (result != result_expected) { failure(result_expected, result); return; }
 }
+
+void test_w32_incmac_w32_w32_w32_w32_w32_w32_w32(std::istream& is) {
+    trv32p3_cnn_primitive::w32 result_expected;
+    trv32p3_cnn_primitive::w32 t0;
+    trv32p3_cnn_primitive::w32 t1;
+    trv32p3_cnn_primitive::w32 t2;
+    trv32p3_cnn_primitive::w32 t3;
+    trv32p3_cnn_primitive::w32 t4;
+    trv32p3_cnn_primitive::w32 t4_expected;
+    trv32p3_cnn_primitive::w32 t5;
+    trv32p3_cnn_primitive::w32 t6;
+    trv32p3_cnn_primitive::w32 t6_expected;
+    read_from_stream(is, t0);
+    read_from_stream(is, t1);
+    read_from_stream(is, t2);
+    read_from_stream(is, t3);
+    read_from_stream(is, t5);
+    read_from_stream(is, result_expected);
+    read_from_stream(is, t4_expected);
+    read_from_stream(is, t6_expected);
+    trv32p3_cnn_primitive::w32 result = incmac(t0, t1, t2, t3, t4, t5, t6);
+    if (result != result_expected) { failure(result_expected, result); return; }
+    if (t4 != t4_expected) { failure(t4_expected, t4); return; }
+    if (t6 != t6_expected) { failure(t6_expected, t6); return; }
+}
 typedef std::map<std::string, void(*)(std::istream&)> TestDrivers;
 void register_drivers0(TestDrivers& test_drivers) {
     test_drivers["w32_add_w32_w32"] = test_w32_add_w32_w32;
@@ -741,6 +766,7 @@ void register_drivers0(TestDrivers& test_drivers) {
     test_drivers["w32_mac_w32_w32_w32"] = test_w32_mac_w32_w32_w32;
     test_drivers["w32_exp_w32"] = test_w32_exp_w32;
     test_drivers["w32_prelu_w32"] = test_w32_prelu_w32;
+    test_drivers["w32_incmac_w32_w32_w32_w32_w32_w32_w32"] = test_w32_incmac_w32_w32_w32_w32_w32_w32_w32;
 }
 int main() {
     std::set<std::string> unknown_primitives;

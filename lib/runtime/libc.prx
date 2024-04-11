@@ -1,4 +1,6 @@
 <project name="Project" processor="trv32p3_cnn" lib="..">
+    <configuration remove="1" parent="Native"/>
+    <configuration remove="1" parent="Release_LLVM_full"/>
     <file type="c" name="ctype.c" path="src"/>
     <file type="c" name="errno.c" path="src"/>
     <file type="c" name="stdio.c" path="src"/>
@@ -11,11 +13,9 @@
     <file type="c" name="clib_inline.c" path="src"/>
     <file type="c" name="crt0.c" path="src"/>
     <file type="c" name="atexit.c" path="src"/>
-    <option id="project.name" value="libc.a"/>
-    <option id="project.type" value="arch"/>
-    <configuration remove="1" parent="Native"/>
-    <configuration remove="1" parent="Release_LLVM_full"/>
     <option id="cpp.define" value="NDEBUG" inherit="1" cfg="Release"/>
     <option id="cpp.define" value="NDEBUG" inherit="1" cfg="Release_LLVM"/>
     <option id="llvm.optim" value="s"/>
+    <option id="project.name" value="libc.a"/>
+    <option id="project.type" value="arch"/>
 </project>

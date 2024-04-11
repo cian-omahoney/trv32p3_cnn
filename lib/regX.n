@@ -40,7 +40,7 @@ enum eX {
 
 reg X[32] <w32,t5u> syntax ("x")
     read (
-      x_r1 x_r2 x_r3
+      x_r1 x_r2 x_r3 x_r4
     )
     write (
       x_w1 x_w2

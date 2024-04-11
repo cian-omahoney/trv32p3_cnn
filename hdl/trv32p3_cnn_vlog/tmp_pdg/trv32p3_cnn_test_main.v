@@ -528,6 +528,39 @@ module test_driver;
     end
   endtask
 
+  task test_w32_incmac_w32_w32_w32_w32_w32_w32_w32;
+    begin : test_w32_incmac_w32_w32_w32_w32_w32_w32_w32_task
+      reg signed [31:0] __pdg__return_sig_expected;
+      reg signed [31:0] __pdg__return_sig_found;
+      reg signed [31:0] c;
+      reg signed [31:0] a;
+      reg signed [31:0] b;
+      reg signed [31:0] a_addr_i;
+      reg signed [31:0] a_addr_o_expected;
+      reg signed [31:0] a_addr_o_found;
+      reg signed [31:0] b_addr_i;
+      reg signed [31:0] b_addr_o_expected;
+      reg signed [31:0] b_addr_o_found;
+      r = $sscanf(line, "%s %h %h %h %h %h %h %h %h ", command, c, a, b, a_addr_i, b_addr_i, __pdg__return_sig_expected, a_addr_o_expected, b_addr_o_expected);
+      w32_incmac_w32_w32_w32_w32_w32_w32_w32(__pdg__return_sig_found, c, a, b, a_addr_i, a_addr_o_found, b_addr_i, b_addr_o_found);
+      if (__pdg__return_sig_expected !== __pdg__return_sig_found)
+      begin
+        $display("FAILURE: %s %h %h %h %h %h %h %h %h , expected %h, found %h", "w32_incmac_w32_w32_w32_w32_w32_w32_w32", c, a, b, a_addr_i, b_addr_i, __pdg__return_sig_expected, a_addr_o_expected, b_addr_o_expected, __pdg__return_sig_expected, __pdg__return_sig_found);
+        $fdisplay(out_file, "%s %h %h %h %h %h %h %h %h // expected %h, found %h", "w32_incmac_w32_w32_w32_w32_w32_w32_w32", c, a, b, a_addr_i, b_addr_i, __pdg__return_sig_expected, a_addr_o_expected, b_addr_o_expected, __pdg__return_sig_expected, __pdg__return_sig_found);
+      end
+      if (a_addr_o_expected !== a_addr_o_found)
+      begin
+        $display("FAILURE: %s %h %h %h %h %h %h %h %h , expected %h, found %h", "w32_incmac_w32_w32_w32_w32_w32_w32_w32", c, a, b, a_addr_i, b_addr_i, __pdg__return_sig_expected, a_addr_o_expected, b_addr_o_expected, a_addr_o_expected, a_addr_o_found);
+        $fdisplay(out_file, "%s %h %h %h %h %h %h %h %h // expected %h, found %h", "w32_incmac_w32_w32_w32_w32_w32_w32_w32", c, a, b, a_addr_i, b_addr_i, __pdg__return_sig_expected, a_addr_o_expected, b_addr_o_expected, a_addr_o_expected, a_addr_o_found);
+      end
+      if (b_addr_o_expected !== b_addr_o_found)
+      begin
+        $display("FAILURE: %s %h %h %h %h %h %h %h %h , expected %h, found %h", "w32_incmac_w32_w32_w32_w32_w32_w32_w32", c, a, b, a_addr_i, b_addr_i, __pdg__return_sig_expected, a_addr_o_expected, b_addr_o_expected, b_addr_o_expected, b_addr_o_found);
+        $fdisplay(out_file, "%s %h %h %h %h %h %h %h %h // expected %h, found %h", "w32_incmac_w32_w32_w32_w32_w32_w32_w32", c, a, b, a_addr_i, b_addr_i, __pdg__return_sig_expected, a_addr_o_expected, b_addr_o_expected, b_addr_o_expected, b_addr_o_found);
+      end
+    end
+  endtask
+
   initial
   begin : file_block
     file = $fopen("trv32p3_cnn_testcases.txt", "r");
@@ -603,6 +636,8 @@ module test_driver;
           test_w32_exp_w32();
         "w32_prelu_w32":
           test_w32_prelu_w32();
+        "w32_incmac_w32_w32_w32_w32_w32_w32_w32":
+          test_w32_incmac_w32_w32_w32_w32_w32_w32_w32();
       endcase
     end
     $fclose(file);

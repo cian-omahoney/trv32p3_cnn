@@ -246,6 +246,16 @@ namespace trv32p3_cnn_primitive {
         return t;
     }
 
+    inline trv32p3_cnn_primitive::w32 incmac(trv32p3_cnn_primitive::w32 c, trv32p3_cnn_primitive::w32 a, trv32p3_cnn_primitive::w32 b, trv32p3_cnn_primitive::w32 a_addr_i, trv32p3_cnn_primitive::w32& a_addr_o, trv32p3_cnn_primitive::w32 b_addr_i, trv32p3_cnn_primitive::w32& b_addr_o) {
+        VBit<32, true> multResult{VBitZeroInitializeTag{}};
+        VBit<32, true> result{VBitZeroInitializeTag{}};
+        multResult = INT32_SATURATION((a.val * b.val)).val;
+        result = INT32_SATURATION(VBit<64, true>((c.val + multResult))).val;
+        a_addr_o = (a_addr_i.val + VBit<32, true>(0x1));
+        b_addr_o = (b_addr_i.val + VBit<32, true>(0x4));
+        return result;
+    }
+
 #ifdef __checkers__
     class div {
     public:

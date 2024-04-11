@@ -45,3 +45,17 @@ w32 exp(w32 a)  {
 w32 prelu(w32 a)  {
   return (a > 0)? a : 0;
 }
+
+
+w32 incmac(w32 c, w32 a, w32 b, w32 a_addr_i, w32& a_addr_o, w32 b_addr_i, w32& b_addr_o)  {
+  int32_t multResult;
+  int32_t result;
+  
+  multResult = INT32_SATURATION(a*b);
+  result     = INT32_SATURATION(c + multResult);
+  
+  a_addr_o = a_addr_i + 1;
+  b_addr_o = b_addr_i + 4;
+  
+  return result;
+}

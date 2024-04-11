@@ -111,8 +111,9 @@ chess_rewrite unsigned int divide_by_ct(unsigned int x, const unsigned int d) ch
 
 chess_rewrite int relu_rule(int a) { return ((a > 0)? a : 0); } -> {return ReLU(a);}
 
-chess_rewrite int mac_rule(int c, int a, int b) { return c + (a*b); } -> {return MyMAC(c,a,b);}
+//chess_rewrite int mac_rule(int c, int a, int b) { return c + (a*b); } -> {return MyMAC(c,a,b);}
 
+chess_rewrite int incmac_rule(int c, int a_addr, int b_addr) {a_addr++; b_addr++; return c + (*(char*)a_addr)*(*(int*)b_addr); } -> {return incmac(c,*(char*)a_addr,*(int*)b_addr, a_addr, a_addr,b_addr,b_addr);}
 
 //chess_rewrite int mac_parr_rule(int c, int a, int b) { int tempA = a; int tempB = b; return c + (tempA*tempB); } -> {return MyMAC(c,a,b);}
 

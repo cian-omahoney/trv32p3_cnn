@@ -9,10 +9,6 @@
 # FOR A PARTICULAR PURPOSE.
 
 
-set_false_path -through inst_cnn/xuB_in -through inst_cnn/cnn_R_out -through inst_mux_x_w1/x_w1_out
-
-set_false_path -through inst_cnn/xuC_in -through inst_cnn/cnn_R_out -through inst_mux_x_w1/x_w1_out
-
 set_false_path -through inst_cnn/cnn_R_out -through inst_mux_x_w1/x_w1_out -through inst_mux_x_w1_dead/x_w1_dead_out
 
 set_false_path -through inst_mux_pcaB/of21_in -through inst_mux_pcaB/pcaB_out -through inst_pca/pcaR_out -through inst_mux___pidTGT_w/__pidTGT_w_out

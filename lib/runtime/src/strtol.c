@@ -61,11 +61,11 @@ long int strtol(const char *restrict nptr,
         int c;
         int neg, any, cutlim;
 
-        /*
-         * Skip white space and pick up leading +/- sign if any.
-         * If base is 0, allow 0x for hex and 0 for octal, else
-         * assume decimal; if base is already 16, allow 0x.
-         */
+        //
+        // Skip white space and pick up leading +/- sign if any.
+         // If base is 0, allow 0x for hex and 0 for octal, else
+        // assume decimal; if base is already 16, allow 0x.
+         //
         s = nptr;
         do {
                 c = (unsigned char) *s++;
@@ -155,3 +155,4 @@ long int strtol(const char *restrict nptr,
 #if defined(__cplusplus) || defined(__ndl__)
 } // extern "C"
 #endif
+
